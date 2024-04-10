@@ -1,0 +1,59 @@
+/* Defines the grid container to hold tracks */
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
+  gap: 20px; /* Space between grid items */
+}
+
+/* Styles for each track item */
+.track-item {
+  text-align: left; /* Aligns the description text to the left */
+}
+
+/* Ensures images are square, fit within the track item, and have their own border */
+.track-item img {
+  width: 100%;
+  height: auto; /* Adjusted for square aspect ratio */
+  aspect-ratio: 1 / 1; /* Ensures the image is square */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 4px;
+  border: 1px solid #ddd; /* Adds border to the image */
+  margin-bottom: 10px; /* Space between the image and description */
+}
+
+/* Adjusts placeholder to be a simple square with a border */
+.track-item-placeholder {
+  background-color: #ccc; /* Darker grey for the placeholder */
+  width: 100%; /* Full width of the container */
+  padding-top: 100%; /* Percentage based on width to maintain square aspect */
+  border: 1px solid #ddd; /* Adds border to the placeholder */
+  border-radius: 30px; /* Rounded corners */
+  margin-bottom: 10px; /* Space between the placeholder and description */
+}
+
+.track-item-placeholder strong {
+  position: absolute;
+  color: white; /* Ensures text is visible on dark background */
+  text-align: center;
+}
+
+/* Styles for the track description */
+.track-description {
+  font-weight: bold; /* Makes the description bold */
+}
+/* Status bar container */
+.track-status-bar {
+  width: 100%;
+  background-color: #eee;
+  margin-bottom: 8px;
+  height: 10px; /* Ensure a minimum height */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensures the inner div doesn't spill out of the rounded corners */
+}
+
+/* Filled portion of the status bar */
+.track-status-bar-filled {
+  height: 100%; /* Fill the height of its container */
+  background-color: #960000;
+  border-radius: 8px; /* Apply if the filled part can be fully visible independently */
+}

@@ -1,0 +1,59 @@
+.purchase-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.purchase-container h2 {
+  color: #333;
+  text-align: center;
+}
+
+.purchase-container p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.purchase-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.StripeElement {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.submit-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+.purchase-option-label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.radio-option {
+  display: block;
+  margin-bottom: 10px; /* Adds some space between the options */
+}

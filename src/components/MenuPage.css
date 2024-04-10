@@ -1,0 +1,41 @@
+.menu-page-container {
+  position: relative;
+  padding-top: 10%; /* Adds space at the top, effectively moving content down */
+  text-align: center; /* Optional: Center-aligns content if desired */
+  min-height: 800vh; /* Full height */
+}
+
+
+/* Adjust the margin for the "Menu" to push it further down */
+.menu-title {
+  margin-top: 100px; /* Adjust this value based on your design */
+}
+
+.menu-page-footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+  width: 100%;
+  text-align: center;
+}
+
+.menu-page-logo {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+/* Styles for the footer containing the logo */
+.menu-page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Close button styling */
+.close-button {
+  position: absolute;
+  top: 0; 
+  right: 10px; 
+  cursor: pointer;
+  font-size: 24px; 
+}

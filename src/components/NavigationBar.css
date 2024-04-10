@@ -1,0 +1,19 @@
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa; /* Light background, adjust as needed */
+}
+
+.logo {
+  height: 50px; /* Adjust based on your logo's size */
+}
+
+.hamburger-icon {
+  cursor: pointer;
+  font-size: 24px; /* Adjust the size as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

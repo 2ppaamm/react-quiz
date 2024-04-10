@@ -1,0 +1,224 @@
+body, html {
+  background-color: #FFFFFF;
+  perspective: 200px;
+}
+
+.question-image-container {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #FFFFFF;
+}
+
+.question-text {
+  font-size: 20px;
+  margin: 25px 0;
+  text-align: center;
+}
+
+/* Adjustments for when a question has an image */
+.question-image {
+  width: 100%;
+  max-height: 50vh;
+  object-fit: contain; /* Ensures the aspect ratio is maintained */
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.answer-option, .fib-input, .next-button {
+  background-color: #eee;
+  color: #222;
+  /*width: 90%; /* Adjust based on layout preference */
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 18px; /* Adjusted for better readability */
+  text-align: center;
+
+  width: 350px;
+  height: 48px;
+  gap: 16px;
+  opacity: 0px;
+  font: inherit;
+}
+.question-submit-button {
+  background-color: #960000;
+  color: white;
+  /*width: 90%; /* Adjust based on layout preference */
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 18px; /* Adjusted for better readability */
+  text-align: center;
+
+  width: 350px;
+  height: 48px;
+  gap: 16px;
+  opacity: 0px;
+  font: inherit;
+}
+
+/* Styles specifically for correct and incorrect answers */
+.correct, .question-submit-button.correct, .next-button.correct {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  z-index: 20; /* Ensure it is above the overlay */
+  position: fixed; /* Position relative to the viewport */
+  top: 10vh; /* 10% from the top of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust horizontal positioning to truly center */
+}
+
+.incorrect, .question-submit-button.incorrect, .next-button.incorrect {
+  background-color: #f44336; /* Red */
+  color: white;
+  z-index: 20; /* Ensure it is above the overlay */
+  position: fixed; /* Position relative to the viewport */
+  top: 10vh; /* 10% from the top of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust horizontal positioning to truly center */
+}
+/* Next button specific styling */
+/* Existing styles... */
+/* Overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  cursor: pointer; /* To indicate the overlay is clickable */
+}
+
+/* Parallelogram feedback container */
+.feedback-parallelogram {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 7vh;
+  background-color: gold;
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  color: #960000; /* Text color */
+  font-size: 2em; /* Larger text size */
+  clip-path: polygon(3 25%, 100% 10%, 100% 35%, 0 50%); /* Slanted parallelogram shape */
+}
+
+.feedback-icon img {
+  width: 7%;
+  height: auto;
+}
+.feedback-parallelogram span {
+  color: #960000;
+  font-size: 0.7em; 
+  text-shadow: 1px 1px 2px #000;
+}
+
+.next-button {
+  position: absolute;
+  bottom: 20vh; /* Positioning from the bottom */
+  /* Other styles remain unchanged */
+}
+
+.question-submit-button.correct .question-submit-icon, .question-submit-button.incorrect .question-submit-icon {
+  color: white;
+}
+
+.question-submit-icon {
+  margin-left: 10px;
+}
+.feedback-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width to center kudos */
+  margin-top: -50px; /* Adjust based on your layout */
+}
+.feedback-icon img {
+  width: 15%; /* Kudos image occupies 25% of the screen width */
+  height: auto; /* Maintain aspect ratio */
+}
+.watch-video-link {
+  text-align: right;
+  color: #960000;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust as necessary */
+}
+
+.watch-video-icon {
+  margin-left: 5px;
+}
+
+.lineinput {
+  font-size: 20px;
+  font-weight:200;
+  display: block;
+  margin: 10px auto 10px auto;
+}
+
+input::placeholder{
+  font-style:italic;
+  font-size:15px;
+}
+.question-text {
+  background-color: #F9F9F9;
+  width: 349px;
+  height: 168px)px;
+  padding: 48px 0px 56px 0px;
+  gap: 32px;
+  border-radius: 20px;
+  opacity: 0px;
+
+}
+/* spinning coin.css */
+
+@keyframes spin3d {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(20deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(0deg);
+  }
+}
+
+#coin {
+  animation: spin3d 0.5s infinite linear;
+  transform-style: preserve-3d;
+}
+
+.inline-math, .katex-display {
+  display: inline !important;
+  margin: 0 !important;
+}
+
+.block-math .katex {
+  display: block !important;
+  text-align: center; /* or left, based on preference */
+  margin: 0.5em 0 !important;
+}

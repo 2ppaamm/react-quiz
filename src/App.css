@@ -1,3 +1,25 @@
+body {
+  background-color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+  text-align: left;
+  margin-left: 20px; /* Adjust as needed for alignment */
+}
+
+h2 {
+  color: #960000;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 31.2px;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +57,144 @@
   to {
     transform: rotate(360deg);
   }
+}
+.App.authenticated {
+  text-align: center;
+  padding-top: 50px;
+  background-color: #f0f8ff; /* Light blue background */
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.welcome-message {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-button {
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80%; /* Adjust based on preference */
+  max-width: 300px; /* Ensures buttons are not too wide on larger screens */
+}
+
+.continue {
+  background-color: #960000;
+}
+
+.test-skills {
+  background-color: #d0acac;
+}
+
+.subject-select {
+  background-color: grey;
+}
+
+@media (max-width: 768px) {
+  .action-button {
+    width: 90%;
+  }
+}
+
+.settings-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.settings-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.logout-button {
+  display: none; /* Initially hidden */
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background-color: #F56A79;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.settings-container:hover .logout-button {
+  display: block; /* Show on hover */
+}
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-container {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.action-button {
+  width: 90%;
+  max-width: 300px; /* Adjust based on your design preference */
+  padding: 15px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px; /* Main text size */
+}
+
+.subtitle {
+  font-size: 14px; /* Smaller font size for subtitles */
+  margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+  .action-button {
+    width: 50%;
+    max-width: 250px;
+  }
+}
+/* Style for welcome image */
+.welcome-image {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

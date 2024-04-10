@@ -1,0 +1,47 @@
+.alt-home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.alternative-welcome-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Adjust the space between buttons */
+}
+
+.action-button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  background-color: #4CAF50; /* Example background color */
+  transition: background-color 0.3s ease;
+
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.38px;
+  text-align: center;
+
+}
+
+.action-button:hover {
+  background-color: #45a049; /* Darker shade for hover effect */
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: #f0f0f0; /* Lighter text color for the subtitle */
+}
+
+#subjectselectsub {
+  color: black;
+}
+

@@ -1,0 +1,46 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+.welcome-back, .user-name {
+  font-size: 24px;
+  line-height: 31.2px;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.welcome-back {
+  font-weight: 500;
+}
+
+.user-name {
+  font-weight: 700;
+}
+
+/* Styles for the buttons */
+.action-button {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.38px;
+  text-align: center;
+  width: 302px;
+  height: 60px;
+  padding: 15px 0;
+  border-radius: 8px;
+  opacity: 1; /* Assuming you want the buttons fully opaque, change '0' to '1' */
+}
+
+/* Additional styles for button backgrounds, defined in JavaScript */
+.continue {
+  background-color: #960000;
+  color: white; /* White text for the first two buttons */
+}
+
+.testSkills {
+  background-color: #E64646;
+  color: white;
+}
+
+.subjectSelect {
+  background-color: #FFC0AC;
+  color: black; /* Black text for the Subject Select button */
+}
