@@ -1,6 +1,6 @@
 import storage from './storage';
 
-const baseURL = "http://localhost:8000";
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
 
 export const fetchUserInfo = async (idToken) => {
 

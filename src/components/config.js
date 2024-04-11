@@ -1,5 +1,5 @@
 const config = {
-  baseURL: process.env.REACT_APP_BACKEND_URL || "https://your-default-backend-host.com",
+  baseURL: process.env.REACT_APP_BACKEND_URL || "https://mathapi.allgifted.com",
 };
 
 export default config;

@@ -63,8 +63,6 @@ const renderKaTex = (htmlString) => {
     return `<span class="inline-math">${formula}</span>`;
   });
 
-  console.log(result); // Debug output
-
   // Attempt to parse and replace with InlineMath components
   return parse(result, {
     replace: (domNode) => {
@@ -232,7 +230,7 @@ const renderKaTex = (htmlString) => {
               <img id="coin" key={i} src={`${process.env.PUBLIC_URL}/images/kudos.png`} alt="Kudos" />
             ))}
           </div>
-          <button onClick={goToNextQuestion} className="next-button">Next</button>
+          {/*<button onClick={goToNextQuestion} className="next-button">Next</button>*/}
         </div>
       )}
     </div>

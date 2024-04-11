@@ -8,6 +8,8 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  width:72%;
   padding: 20px; /* Adjust padding as needed */
 }
 
@@ -19,16 +21,10 @@ body, html {
   background-color: #FFFFFF;
 }
 
-.question-text {
-  font-size: 20px;
-  margin: 25px 0;
-  text-align: center;
-}
-
 /* Adjustments for when a question has an image */
 .question-image {
   width: 100%;
-  max-height: 50vh;
+  max-height: 100vh;
   object-fit: contain; /* Ensures the aspect ratio is maintained */
   border-radius: 15px;
   margin: 20px 0;
@@ -42,16 +38,13 @@ body, html {
   margin: 10px 0;
   border: none;
   cursor: pointer;
-  border-radius: 15px;
-  font-size: 18px; /* Adjusted for better readability */
+  border-radius: 8px;
   text-align: center;
-
-  width: 350px;
+  width: 80%;
   height: 48px;
-  gap: 16px;
-  opacity: 0px;
   font: inherit;
 }
+
 .question-submit-button {
   background-color: #960000;
   color: white;
@@ -61,13 +54,9 @@ body, html {
   border: none;
   cursor: pointer;
   border-radius: 15px;
-  font-size: 18px; /* Adjusted for better readability */
   text-align: center;
-
   width: 350px;
   height: 48px;
-  gap: 16px;
-  opacity: 0px;
   font: inherit;
 }
 
@@ -185,13 +174,13 @@ input::placeholder{
 }
 .question-text {
   background-color: #F9F9F9;
-  width: 349px;
-  height: 168px)px;
+  width: 80%;
+  height: 35%;
   padding: 48px 0px 56px 0px;
-  gap: 32px;
-  border-radius: 20px;
-  opacity: 0px;
-
+  border-radius: 8px;
+  font-size: 20px;
+  margin: 25px 0;
+  text-align: center;
 }
 /* spinning coin.css */
 
