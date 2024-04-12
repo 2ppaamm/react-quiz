@@ -21,7 +21,8 @@ const QuestionsDisplay = () => {
   const navigate = useNavigate();
   const baseUrl = `${process.env.REACT_APP_BACKEND_URL}`;
   const activeQuestion = questions[activeQuestionIndex];
-    const [showVideoPopup, setShowVideoPopup] = useState(false);
+  const [showVideoPopup, setShowVideoPopup] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   useEffect(() => {
     const testType = localStorage.getItem('testType');
@@ -54,33 +55,39 @@ const QuestionsDisplay = () => {
     setShowVideoPopup(false);
   };
   
-const renderKaTex = (htmlString) => {
-  // Simplified regex that only looks for inline math
-  const regexInline = /\$\$([^$]+?)\$\$/g;
+  const renderKaTex = (htmlString) => {
+    // Simplified regex that only looks for inline math
+    const regexInline = /\$\$([^$]+?)\$\$/g;
 
-  let result = htmlString.replace(regexInline, (match, formula) => {
-    // Directly return the InlineMath component as a string (won't work but for illustration)
-    return `<span class="inline-math">${formula}</span>`;
-  });
+    let result = htmlString.replace(regexInline, (match, formula) => {
+      // Directly return the InlineMath component as a string (won't work but for illustration)
+      return `<span class="inline-math">${formula}</span>`;
+    });
 
-  // Attempt to parse and replace with InlineMath components
-  return parse(result, {
-    replace: (domNode) => {
-      if (domNode.attribs && domNode.attribs.class === "inline-math") {
-        // This won't work as expected because html-react-parser can't directly render React components from strings
-        return <InlineMath math={domNode.children[0].data} />;
+    // Attempt to parse and replace with InlineMath components
+    return parse(result, {
+      replace: (domNode) => {
+        if (domNode.attribs && domNode.attribs.class === "inline-math") {
+          // This won't work as expected because html-react-parser can't directly render React components from strings
+          return <InlineMath math={domNode.children[0].data} />;
+        }
       }
-    }
-  });
-};
-
-  const handleMCQ = (selectedIndex) => {
-    const correct = selectedIndex === parseInt(activeQuestion.correct_answer);
-    setIsAnswerCorrect(correct);
-    setUserAnswers(prevAnswers => [...prevAnswers, { question_id: activeQuestion.id, answer: selectedIndex }]);
-    setShowOverlay(true);
+    });
   };
 
+  const handleMCQ = (index) => {
+    setSelectedOption(index);  // Store the index of the selected option
+  };
+  const handleSubmitMCQ = () => {
+    if (selectedOption !== null) {
+      const correct = parseInt(questions[activeQuestionIndex].correct_answer) === selectedOption;
+      setIsAnswerCorrect(correct);
+      setUserAnswers(prevAnswers => [...prevAnswers, { question_id: questions[activeQuestionIndex].id, answer: selectedOption }]);
+      setShowOverlay(true); // Show feedback
+      setSelectedOption(null); // Reset selection
+    }
+  };
+ 
   const handleFIBSubmit = () => {
       let allAnswersCorrect = true;
       const fibAnswers = [];
@@ -105,23 +112,23 @@ const renderKaTex = (htmlString) => {
   };
 
   const goToNextQuestion = () => {
-   if (activeQuestionIndex < questions.length - 1) {
+    setShowOverlay(false);
+    if (activeQuestionIndex < questions.length - 1) {
     // Not the last question, so move to the next question
     setActiveQuestionIndex(currentIndex => currentIndex + 1);
-    if (activeQuestion.type_id === 2) {
-      // Clear inputs and set placeholders if the current question is of type 2
-      const inputs = document.querySelectorAll('.lineinput');
-      inputs.forEach(input => {
-        input.value = ''; // Clear the input
-//        input.placeholder = 'Type your answer here'; // Update placeholder
-      });
-    }    
-  } else {
-    // This is the last question, so submit answers
-    submitAnswers();
-  }
-    setIsAnswerCorrect(null);
-    setShowOverlay(false);
+      if (activeQuestion.type_id === 2) {
+        // Clear inputs and set placeholders if the current question is of type 2
+        const inputs = document.querySelectorAll('.lineinput');
+        inputs.forEach(input => {
+          input.value = ''; // Clear the input
+          input.placeholder = 'Type your answer here'; // Update placeholder
+        });
+      }    
+    } else {
+      // This is the last question, so submit answers
+      submitAnswers();
+    }
+      setIsAnswerCorrect(null);
   };
 
   const submitButtonText = isAnswerCorrect === null ? "Submit" : isAnswerCorrect ? "Correct" : "Not correct";
@@ -159,6 +166,7 @@ const renderKaTex = (htmlString) => {
 
   return (
     <div className="question-container">
+    <div className={showOverlay ? 'disabled-questions' : ''}>
       <div className="question-text">
         {activeQuestion?.question && renderKaTex(DOMPurify.sanitize(activeQuestion.question))}
       </div>
@@ -174,32 +182,40 @@ const renderKaTex = (htmlString) => {
       )}
 
       {activeQuestion.type_id === 1 && (
-        [...Array(4)].map((_, index) => {
-          const answerText = activeQuestion[`answer${index}`];
-          const answerImage = activeQuestion[`answer${index}_image`];
-          if (answerText || answerImage) {
-            return (
-              <button
-                key={index}
-                onClick={() => handleMCQ(index)}
-                className="answer-option">
-                {answerImage ? (
-                  <img src={`${baseUrl}/${answerImage}`} alt={`Answer ${index}`} className="answer-image" />
-                ) : (
-                  // Render answer text with potential KaTeX expressions
-                  renderKaTex(DOMPurify.sanitize(answerText))
-                )}
-              </button>
-            );
+        <div className="answer-options-container">
+          { [...Array(4)].map((_, index) => {
+              const answerText = activeQuestion[`answer${index}`];
+              const answerImage = activeQuestion[`answer${index}_image`];
+              if (answerText || answerImage) {
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleMCQ(index)}
+                    className={`answer-option ${selectedOption === index ? 'selected' : ''}`}>
+                    {answerImage ? (
+                      <img src={`${baseUrl}${answerImage}`} alt={`Answer ${index}`} className="answer-image" />
+                    ) : (
+                      // Render answer text with potential KaTeX expressions
+                      renderKaTex(DOMPurify.sanitize(answerText))
+                    )}
+                  </button>
+                );
+              }
+              return null;
+            })
           }
-          return null;
-        })
+          <button className="question-submit-button" onClick={handleSubmitMCQ}>
+            Submit
+          </button>
+        </div>
       )}
-      {activeQuestion.type_id === 2 && (
+
+    {activeQuestion.type_id === 2 && (
         <button className="question-submit-button" onClick={handleFIBSubmit}>
           Submit
         </button>
       )}
+      </div>
       {showOverlay && (
         <div className="overlay" onClick={goToNextQuestion}>
           {isAnswerCorrect && <Confetti width={window.width} height={window.height} />}
@@ -230,7 +246,7 @@ const renderKaTex = (htmlString) => {
               <img id="coin" key={i} src={`${process.env.PUBLIC_URL}/images/kudos.png`} alt="Kudos" />
             ))}
           </div>
-          {/*<button onClick={goToNextQuestion} className="next-button">Next</button>*/}
+          {/*<button className="next-button">Next</button>*/}
         </div>
       )}
     </div>

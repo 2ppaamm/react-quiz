@@ -2,6 +2,31 @@ body, html {
   background-color: #FFFFFF;
   perspective: 200px;
 }
+.question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #FFFFFF;
+    z-index: 10;
+    box-sizing: border-box;
+}
+.question-container.disabled * {
+  pointer-events: none; /* Disable all interactions within the container */
+}
+
+.question-text {
+  background-color: #F9F9F9;
+  height: 55%;
+  border-radius: 8px;
+  font-size: 20px;
+  margin: 20px 0;
+  justify-content: center;
+  width: 100%; /* Full width to align with answer buttons */
+  padding: 20px;
+  text-align: center; /* Ensures text is centered */
+}
 
 .question-image-container {
   background-color: #eee;
@@ -9,24 +34,18 @@ body, html {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  width:72%;
-  padding: 20px; /* Adjust padding as needed */
-}
-
-.question-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width:100%;
   padding: 20px;
-  background-color: #FFFFFF;
+  height: 55%;
+  grid-column: 1 / -1;
 }
 
 /* Adjustments for when a question has an image */
 .question-image {
   width: 100%;
-  max-height: 100vh;
+  height: auto;
   object-fit: contain; /* Ensures the aspect ratio is maintained */
-  border-radius: 15px;
+  border-radius: 8px;
   margin: 20px 0;
 }
 
@@ -40,25 +59,62 @@ body, html {
   cursor: pointer;
   border-radius: 8px;
   text-align: center;
-  width: 80%;
+  width: 100%;
   height: 48px;
   font: inherit;
+  cursor: pointer;
+}
+
+.answer-option.selected {
+  background-color: #d0acac; /* Light green background for selected options */
+  border: 3px solid #960000; /* Darker green border */
+}
+
+.answer-options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-rows: 1fr 1fr; /* Two rows */
+  gap: 20px; /* Space between options */
+  padding: 20px; /* Padding around the grid */
+  width: 100%; /* Full width of the container */
+  max-width: 600px; /* Maximum width of the container */
+  margin: auto; /* Centering the grid */
+}
+
+.answer-option {
+  background-color: #eee;
+  color: #222;
+  width:100%;
+  height: auto;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: center;
+  padding: 15px;
+  font-size: 16px; /* Adjust font size as necessary */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
 }
 
 .question-submit-button {
-  background-color: #960000;
-  color: white;
-  /*width: 90%; /* Adjust based on layout preference */
-  padding: 15px;
-  margin: 10px 0;
-  border: none;
-  cursor: pointer;
-  border-radius: 15px;
-  text-align: center;
-  width: 350px;
-  height: 48px;
-  font: inherit;
+    grid-column: 1 / -1; /* Makes the button span all columns */
+    background-color: #960000;
+    color: white;
+    padding: 15px;
+    margin: 20px 0; /* Adds margin to the top and bottom for spacing */
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%; /* Ensures full width */
+    font: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 /* Styles specifically for correct and incorrect answers */
 .correct, .question-submit-button.correct, .next-button.correct {
@@ -85,16 +141,17 @@ body, html {
 /* Overlay styles */
 .overlay {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 30%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
-  cursor: pointer; /* To indicate the overlay is clickable */
+  z-index: 20;
+  cursor: pointer;
+  box-sizing: border-box; /* To indicate the overlay is clickable */
 }
 
 /* Parallelogram feedback container */
@@ -103,7 +160,7 @@ body, html {
   top: 5%;
   left: 0;
   width: 100%;
-  height: 7vh;
+  height: 20%;
   background-color: gold;
   display: flex;
   align-items: center; /* Center text vertically */
@@ -114,8 +171,9 @@ body, html {
 }
 
 .feedback-icon img {
-  width: 7%;
+  width: 10%;
   height: auto;
+  margin-top:10%;
 }
 .feedback-parallelogram span {
   color: #960000;
@@ -125,7 +183,7 @@ body, html {
 
 .next-button {
   position: absolute;
-  bottom: 20vh; /* Positioning from the bottom */
+  bottom: 10%;
   /* Other styles remain unchanged */
 }
 
@@ -172,16 +230,7 @@ input::placeholder{
   font-style:italic;
   font-size:15px;
 }
-.question-text {
-  background-color: #F9F9F9;
-  width: 80%;
-  height: 35%;
-  padding: 48px 0px 56px 0px;
-  border-radius: 8px;
-  font-size: 20px;
-  margin: 25px 0;
-  text-align: center;
-}
+
 /* spinning coin.css */
 
 @keyframes spin3d {
