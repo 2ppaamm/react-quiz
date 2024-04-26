@@ -1,0 +1,3064 @@
+{
+    "message": "Valid Enrolment",
+    "tracks": [
+        {
+            "id": 1,
+            "track": "Numbers up to 100",
+            "description": "Numbers up to 100",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 2,
+            "skills": [
+                {
+                    "id": 1,
+                    "skill": "Counting",
+                    "description": "Counting to tell the number of objects in a given set",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:34",
+                    "check": 0,
+                    "track_id": null
+                },
+                {
+                    "id": 2,
+                    "skill": "Number Notation",
+                    "description": "Number notation, representations and place values (tens, ones)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:34",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 422,
+                    "skill": "Counting",
+                    "description": "Counting to tell the number of objects in a given set",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2023-06-12 00:00:03",
+                    "check": 0,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 1,
+                        "user_id": 2,
+                        "created_at": "2024-04-23 05:46:12",
+                        "updated_at": "2024-04-24 06:00:19",
+                        "track_maxile": "200.00",
+                        "track_test_date": "2024-04-24 06:00:19",
+                        "track_passed": 1,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "track": "Addition and Subtraction to 100",
+            "description": "Addition and Subtraction to 100",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 2,
+            "skills": [
+                {
+                    "id": 9,
+                    "skill": "Addition and Subtraction",
+                    "description": "Concepts of addition and subtraction",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:34",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 10,
+                    "skill": "Use of symbols",
+                    "description": "use of +, -, and =",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:34",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 11,
+                    "skill": "Addition and Subtraction",
+                    "description": "relationship between addition and subtraction",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:34",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 12,
+                    "skill": "Adding more than two 1-digit numbers",
+                    "description": "Adding more than two 1-digit numbers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 13,
+                    "skill": "Add and subtracting within 100",
+                    "description": "Add and subtracting within 100",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 14,
+                    "skill": "Adding and subtracting using algorithms",
+                    "description": "Adding and subtracting using algorithms",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 15,
+                    "skill": "Solving 1-step word problems involving addition and subtraction within 20",
+                    "description": "Solving 1-step word problems involving addition and subtraction within 20",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 3,
+            "track": "Multiplication and Division to 100",
+            "description": "Multiplication and Division to 100",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 2,
+            "skills": [
+                {
+                    "id": 16,
+                    "skill": "concepts of multiplication and division",
+                    "description": "concepts of multiplication and division",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 17,
+                    "skill": "use of x",
+                    "description": "use of x",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 18,
+                    "skill": "multiplying within 40",
+                    "description": "multiplying within 40",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 19,
+                    "skill": "dividing within 20",
+                    "description": "dividing within 20",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 20,
+                    "skill": "solving 1-step word problems involving multiplication and division with pictorial representation",
+                    "description": "solving 1-step word problems involving multiplication and division with pictorial representation",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 4,
+            "track": "Money Year 1",
+            "description": "Money Year 1",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 2,
+            "skills": [
+                {
+                    "id": 21,
+                    "skill": "counting amount of money",
+                    "description": "counting amount of money",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 22,
+                    "skill": "solving 1-step word problems involving addition and subtraction of money in dollars only",
+                    "description": "solving 1-step word problems involving addition and subtraction of money in dollars only",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 5,
+            "track": "Length Year 1",
+            "description": "Length Year 1",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 2,
+            "skills": [
+                {
+                    "id": 23,
+                    "skill": "measuring and comparing the length of objects in non-standard units",
+                    "description": "measuring and comparing the length of objects in non-standard units",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 6,
+            "track": "Time Year 1",
+            "description": "Time Year 1",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 2,
+            "skills": [
+                {
+                    "id": 24,
+                    "skill": "telling time to the hour/half hour",
+                    "description": "telling time to the hour/half hour",
+                    "image": null,
+                    "lesson_link": "https://www.youtube.com/watch?v=8RJzoyIVzV8",
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 7,
+            "track": "2D Shapes",
+            "description": "2D Shapes",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 7,
+            "level_id": 2,
+            "skills": [
+                {
+                    "id": 25,
+                    "skill": "identifying, naming, describing and classifying 2D shapes",
+                    "description": "identifying, naming, describing and classifying 2D shapes",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 26,
+                    "skill": "making/completing patterns with 2D shapes according to size, shape, colour, orientation",
+                    "description": "making/completing patterns with 2D shapes according to size, shape, colour, orientation",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 8,
+            "track": "Picture Graphs",
+            "description": "Picture Graphs",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 5,
+            "level_id": 2,
+            "skills": [
+                {
+                    "id": 27,
+                    "skill": "reading and interpreting data from picture graphs",
+                    "description": "reading and interpreting data from picture graphs",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 386,
+                    "skill": "counting",
+                    "description": "count",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 3,
+                    "created_at": "2018-11-25 14:30:32",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 9,
+            "track": "Numbers up to 1000",
+            "description": "Numbers up to 1000",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 3,
+            "skills": [
+                {
+                    "id": 28,
+                    "skill": "counting in tens/hundreds",
+                    "description": "counting in tens/hundreds",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 29,
+                    "skill": "number notation, representations and place values (hunds, tens, ones)",
+                    "description": "number notation, representations and place values (hunds, tens, ones)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 30,
+                    "skill": "reading and writing numbers in numerals and in words",
+                    "description": "reading and writing numbers in numerals and in words",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 31,
+                    "skill": "comparing and ordering numbers",
+                    "description": "comparing and ordering numbers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 32,
+                    "skill": "patterns in number sequences",
+                    "description": "patterns in number sequences",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 33,
+                    "skill": "odd and even numbers",
+                    "description": "odd and even numbers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 10,
+            "track": "Addition and Subtraction to 1000",
+            "description": "Addition and Subtraction to 1000",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 3,
+            "skills": [
+                {
+                    "id": 34,
+                    "skill": "addition and subtraction algorithms (up to 3 digits)",
+                    "description": "addition and subtraction algorithms (up to 3 digits)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 35,
+                    "skill": "solving up to 2-step word problems involving addition and subtraction",
+                    "description": "solving up to 2-step word problems involving addition and subtraction",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 11,
+            "track": "Multiplication and Division to 1000",
+            "description": "Multiplication and Division to 1000",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 3,
+            "skills": [
+                {
+                    "id": 36,
+                    "skill": "multiplication tables of 2,3,4,5 and 10",
+                    "description": "multiplication tables of 2,3,4,5 and 10",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 37,
+                    "skill": "use of +",
+                    "description": "use of +",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 38,
+                    "skill": "relationship between multiplication and division",
+                    "description": "relationship between multiplication and division",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 39,
+                    "skill": "multiplying and dividing within the multiplication tables",
+                    "description": "multiplying and dividing within the multiplication tables",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 40,
+                    "skill": "solving 1-step word problems involving multiplication and division within the multiplication tables",
+                    "description": "solving 1-step word problems involving multiplication and division within the multiplication tables",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 12,
+            "track": "Fraction of a Whole",
+            "description": "Fraction of a Whole",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 3,
+            "skills": [
+                {
+                    "id": 41,
+                    "skill": "fraction as part of a whole",
+                    "description": "fraction as part of a whole",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 42,
+                    "skill": "notation and representation of fractions",
+                    "description": "notation and representation of fractions",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 43,
+                    "skill": "comparing and ordering fractions with denominator of giving fractions not exceeding 12",
+                    "description": "comparing and ordering fractions with denominator of giving fractions not exceeding 12",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 13,
+            "track": "Addition and Subtraction of fraction of a whole",
+            "description": "Addition and Subtraction of fraction of a whole",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 3,
+            "skills": [
+                {
+                    "id": 44,
+                    "skill": "adding and subtracting like fractions within one whole with denominators of given fractions not exceeding 12",
+                    "description": "adding and subtracting like fractions within one whole with denominators of given fractions not exceeding 12",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 14,
+            "track": "Money Year 2",
+            "description": "Money Year 2",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 3,
+            "skills": [
+                {
+                    "id": 45,
+                    "skill": "counting of money in dollars and cents",
+                    "description": "counting aound of money in dollars and cents",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 46,
+                    "skill": "reading and writing money in decimal notation",
+                    "description": "reading and writing money in decimal notation",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 47,
+                    "skill": "comparing 2 or 3 amounts of money",
+                    "description": "comparing 2 or 3 amounts of money",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 48,
+                    "skill": "converting an amount of money in decimal notation to cents only and vice versa",
+                    "description": "converting an amount of money in decimal notation to cents only and vice versa",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 49,
+                    "skill": "solving word problems involving money in dollars only (or in cents only)",
+                    "description": "solving word problems involving money in dollars only (or in cents only)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 15,
+            "track": "Length, Mass Volume",
+            "description": "Length, Mass Volume",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 3,
+            "skills": [
+                {
+                    "id": 50,
+                    "skill": "measuring length, mass and volume of liquid",
+                    "description": "measuring length, mass and volume of liquid",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 51,
+                    "skill": "measuring and drawing a line segment to the nearest cm",
+                    "description": "measuring and drawing a line segment to the nearest cm",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 52,
+                    "skill": "using appropriate units of measurement and their abbreviations cm, m, g, kg, l",
+                    "description": "using appropriate units of measurement and their abbreviations cm, m, g, kg, l",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 53,
+                    "skill": "comparing and ordering lengths, masses and volumes",
+                    "description": "comparing and ordering lengths, masses and volumes",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 54,
+                    "skill": "solving word problems involving length/mass/volume",
+                    "description": "solving word problems involving length/mass/volume",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 16,
+            "track": "Time Year 2",
+            "description": "Time Year 2",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 3,
+            "skills": [
+                {
+                    "id": 55,
+                    "skill": "telling time to 5 minutes",
+                    "description": "telling time to 5 minutes",
+                    "image": null,
+                    "lesson_link": "https://www.youtube.com/watch?time_continue=253&v=HrxZWNu72WI",
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 56,
+                    "skill": "use of 'a.m. ' and 'p.m.'",
+                    "description": "use of 'a.m. ' and 'p.m.'",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 57,
+                    "skill": "use of abbreviated h and min",
+                    "description": "use of abbreviated h and min",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 58,
+                    "skill": "duration of 1 hour/half hour",
+                    "description": "duration of 1 hour/half hour",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 17,
+            "track": "2D Shapes Year 2",
+            "description": "2D Shapes Year 2",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 7,
+            "level_id": 3,
+            "skills": [
+                {
+                    "id": 59,
+                    "skill": "identifying, naming, describing and classifying 2D shapes semicircle, quarter circle",
+                    "description": "identifying, naming, describing and classifying 2D shapes semicircle, quarter circle",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 60,
+                    "skill": "identifying the basic shapes that make up a given figure",
+                    "description": "identifying the basic shapes that make up a given figure",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 61,
+                    "skill": "forming different 2D figures with rectangle, square, triangle, semicircle, quarter circle",
+                    "description": "forming different 2D figures with rectangle, square, triangle, semicircle, quarter circle",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 20,
+            "track": "Numbers up to 10000",
+            "description": "Numbers up to 10000",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 65,
+                    "skill": "counting in hundreds/thousands",
+                    "description": "counting in hundreds/thousands",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 66,
+                    "skill": "number notation, representations and place values (thousands, hundreds, tens, ones)",
+                    "description": "number notation, representations and place values (thousands, hundreds, tens, ones)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 67,
+                    "skill": "reading and writing numbers in numerals and in words to 10000",
+                    "description": "reading and writing numbers in numerals and in words to 10000",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 68,
+                    "skill": "comparing and order numbers to 10000",
+                    "description": "comparing and order numbers to 10000",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 69,
+                    "skill": "patterns and ordering numbers to 10000",
+                    "description": "patterns and ordering numbers to 10000",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 20,
+                        "user_id": 2,
+                        "created_at": "2023-06-09 01:45:27",
+                        "updated_at": "2023-06-17 08:57:50",
+                        "track_maxile": "0.00",
+                        "track_test_date": "2023-06-17 08:57:50",
+                        "track_passed": 0,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "track": "Addition and Subtraction to 10000",
+            "description": "Addition and Subtraction to 10000",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 70,
+                    "skill": "addition and subtraction algorithms (up to 4 digits)",
+                    "description": "addition and subtraction algorithms (up to 4 digits)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 71,
+                    "skill": "solving up to 2-step word problems involving addition and subtraction up to 4 digits",
+                    "description": "solving up to 2-step word problems involving addition and subtraction up to 4 digits",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 21,
+                        "user_id": 2,
+                        "created_at": "2023-06-09 01:45:27",
+                        "updated_at": "2023-06-09 01:45:27",
+                        "track_maxile": "0.00",
+                        "track_test_date": null,
+                        "track_passed": 0,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "track": "Multiplication and Dvision to 10000",
+            "description": "Multiplication and Dvision to 10000",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 72,
+                    "skill": "multiplication tables of 6,7,8 and 9",
+                    "description": "multiplication tables of 6,7,8 and 9",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 73,
+                    "skill": "multiplying and dividing within the multiplication tables of 6,7.8 and 9",
+                    "description": "multiplying and dividing within the multiplication tables of 6,7.8 and 9",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 74,
+                    "skill": "division with remainder",
+                    "description": "division with remainder",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 75,
+                    "skill": "multiplication and division algorithms (up to 3 digits by 1 digit)",
+                    "description": "multiplication and division algorithms (up to 3 digits by 1 digit)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 76,
+                    "skill": "solving up to 2-step word problems involving the 4 operations",
+                    "description": "solving up to 2-step word problems involving the 4 operations",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 23,
+            "track": "Equivalent Fractions",
+            "description": "Equivalent Fractions",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 77,
+                    "skill": "equivalent fractions",
+                    "description": "equivalent fractions",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 78,
+                    "skill": "expressing a fraction in its simplest form",
+                    "description": "expressing a fraction in its simplest form",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 79,
+                    "skill": "comparing and ordering unlike fractions with denominations of given fractions not exceeding 12",
+                    "description": "comparing and ordering unlike fractions with denominations of given fractions not exceeding 12",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 80,
+                    "skill": "writing the equivalent fraction of a fraction given the denominator or the numerator",
+                    "description": "writing the equivalent fraction of a fraction given the denominator or the numerator",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 23,
+                        "user_id": 2,
+                        "created_at": "2023-06-09 01:45:27",
+                        "updated_at": "2023-06-09 01:45:27",
+                        "track_maxile": "0.00",
+                        "track_test_date": null,
+                        "track_passed": 0,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "track": "Addition and Subtraction of equivalent fractions",
+            "description": "Addition and Subtraction of equivalent fractions",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 81,
+                    "skill": "adding and subtracting two related fractions witin one whole with denominators of given fractions not exceeding 12",
+                    "description": "adding and subtracting two related fractions witin one whole with denominators of given fractions not exceeding 12",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 24,
+                        "user_id": 2,
+                        "created_at": "2023-06-09 01:45:27",
+                        "updated_at": "2023-06-09 01:45:27",
+                        "track_maxile": "0.00",
+                        "track_test_date": null,
+                        "track_passed": 0,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "track": "Money Year 3",
+            "description": "Money Year 3",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 82,
+                    "skill": "adding and subtracting money in decimal notation",
+                    "description": "adding and subtracting money in decimal notation",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 83,
+                    "skill": "solving word problems involving addition and subtraction of money in decimal notation",
+                    "description": "solving word problems involving addition and subtraction of money in decimal notation",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 26,
+            "track": "Length, Mass and Volume Year 3",
+            "description": "Length, Mass and Volume Year 3",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 84,
+                    "skill": "measuring length in km and volume in ml",
+                    "description": "measuring length in km and volume in ml",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 85,
+                    "skill": "measuring length/mass/volume in compound units",
+                    "description": "measuring length/mass/volume in compound units",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:35",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 86,
+                    "skill": "converting a measurement in compound units to the smaller unit, and vice versa",
+                    "description": "converting a measurement in compound units to the smaller unit, and vice versa",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 87,
+                    "skill": "solving word problems involving length/mass/volume/capacity excluding fractions and compound units",
+                    "description": "solving word problems involving length/mass/volume/capacity excluding fractions and compound units",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 26,
+                        "user_id": 2,
+                        "created_at": "2023-06-09 01:45:27",
+                        "updated_at": "2023-06-09 01:45:27",
+                        "track_maxile": "0.00",
+                        "track_test_date": null,
+                        "track_passed": 0,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "track": "Time Year 3",
+            "description": "Time Year 3",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 88,
+                    "skill": "telling time to the minute",
+                    "description": "telling time to the minute",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 89,
+                    "skill": "use of 'past' and 'to' to tell time",
+                    "description": "use of 'past' and 'to' to tell time",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 90,
+                    "skill": "measuring time in hours and minutes",
+                    "description": "measuring time in hours and minutes",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 91,
+                    "skill": "converting time in hours and minutes to minutes only and vice versa",
+                    "description": "converting time in hours and minutes to minutes only and vice versa",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 92,
+                    "skill": "finding the starting time, finishing time or duration given the other two quantities",
+                    "description": "finding the starting time, finishing time or duration given the other two quantities",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 93,
+                    "skill": "solving problems involving time in hours and minutes",
+                    "description": "solving problems involving time in hours and minutes",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 28,
+            "track": "Area and Perimeter",
+            "description": "Area and Perimeter",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 7,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 94,
+                    "skill": "concepts of area and perimeter of a plane figure",
+                    "description": "concepts of area and perimeter of a plane figure",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 95,
+                    "skill": "measuring area in square units, cm2 and m2 excluding conversion between cm2 and m2",
+                    "description": "measuring area in square units, cm2 and m2 excluding conversion between cm2 and m2",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 96,
+                    "skill": "perimeter of rectlinear figure, rectangle and square",
+                    "description": "perimeter of rectlinear figure, rectangle and square",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 97,
+                    "skill": "area of rectangle/square",
+                    "description": "area of rectangle/square",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 28,
+                        "user_id": 2,
+                        "created_at": "2023-06-09 01:45:27",
+                        "updated_at": "2023-06-09 01:45:27",
+                        "track_maxile": "0.00",
+                        "track_test_date": null,
+                        "track_passed": 0,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "track": "Angles Year 3",
+            "description": "Angles Year 3",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 7,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 98,
+                    "skill": "concepts of angle",
+                    "description": "concepts of angle",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 99,
+                    "skill": "right angles, angles greater than/smaller than a right angle",
+                    "description": "right angles, angles greater than/smaller than a right angle",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 29,
+                        "user_id": 2,
+                        "created_at": "2021-08-15 09:18:28",
+                        "updated_at": "2021-08-15 09:18:28",
+                        "track_maxile": "0.00",
+                        "track_test_date": null,
+                        "track_passed": 0,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "track": "Perpendicular and Parallel Lines",
+            "description": "Perpendicular and Parallel Lines",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 7,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 100,
+                    "skill": "perpendicular and parallel lines",
+                    "description": "perpendicular and parallel lines",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 101,
+                    "skill": "draw perpendicular and parallel lines on square grid",
+                    "description": "draw perpendicular and parallel lines on square grid",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 30,
+                        "user_id": 2,
+                        "created_at": "2021-08-15 09:18:28",
+                        "updated_at": "2021-08-15 09:18:28",
+                        "track_maxile": "0.00",
+                        "track_test_date": null,
+                        "track_passed": 0,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "track": "Bar Graphs",
+            "description": "Bar Graphs",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 5,
+            "level_id": 4,
+            "skills": [
+                {
+                    "id": 102,
+                    "skill": "reading and interpreting data from bar graphs",
+                    "description": "reading and interpreting data from bar graphs",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 103,
+                    "skill": "using different scales on axis",
+                    "description": "using different scales on axis",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 104,
+                    "skill": "solving 1-step problems using data from bar graphs",
+                    "description": "solving 1-step problems using data from bar graphs",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": [
+                {
+                    "id": 2,
+                    "name": "pamelaliusm@gmail.com",
+                    "firstname": null,
+                    "lastname": null,
+                    "contact": "94357225",
+                    "email": "pamelaliusm@gmail.com",
+                    "is_admin": 1,
+                    "maxile_level": "291.18",
+                    "game_level": 43,
+                    "date_of_birth": "1966-02-20 00:00:00",
+                    "last_test_date": "2021-09-16 03:04:28",
+                    "next_test_date": "2018-03-18 01:23:25",
+                    "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+                    "updated_at": "2023-06-09 03:26:56",
+                    "diagnostic": 0,
+                    "pivot": {
+                        "track_id": 31,
+                        "user_id": 2,
+                        "created_at": "2021-08-15 09:18:28",
+                        "updated_at": "2021-08-15 09:18:28",
+                        "track_maxile": "0.00",
+                        "track_test_date": null,
+                        "track_passed": 0,
+                        "doneNess": "0.00"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "track": "Numbers up to 100000",
+            "description": "Numbers up to 100000",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 105,
+                    "skill": "number notation, representations and place values (ten thousands, thousands, hundreds, tens and ones)",
+                    "description": "number notation, representations and place values (ten thousands, thousands, hundreds, tens and ones)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 106,
+                    "skill": "reading and writing numbers in numerals and in words",
+                    "description": "reading and writing numbers in numerals and in words",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 107,
+                    "skill": "comparing and ordering numbers",
+                    "description": "comparing and ordering numbers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 108,
+                    "skill": "patterns in number sequences to 100,000",
+                    "description": "patterns in number sequences to 100,000",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 109,
+                    "skill": "rounding numbers to the nearest 10, 100 or 1000",
+                    "description": "rounding numbers to the nearest 10, 100 or 1000",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 110,
+                    "skill": "use of ≈",
+                    "description": "use of ≈",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 33,
+            "track": "Factors and Multiples",
+            "description": "Factors and Multiples",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 111,
+                    "skill": "factors, multiples and their relationship",
+                    "description": "factors, multiples and their relationship",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 112,
+                    "skill": "determining if a 1-digit number is a factor o a given number within 100",
+                    "description": "determining if a 1-digit number is a factor o a given number within 100",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 113,
+                    "skill": "finding the common factors of 2 given numbers",
+                    "description": "finding the common factors of 2 given numbers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 114,
+                    "skill": "determining if a number is a multiple of a given 1-digit number",
+                    "description": "determining if a number is a multiple of a given 1-digit number",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 115,
+                    "skill": "finding the common multiples of two given 1-digit numbers",
+                    "description": "finding the common multiples of two given 1-digit numbers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 34,
+            "track": "Four Operations",
+            "description": "Four Operations",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 116,
+                    "skill": "multiplication algorithm up to 4 digits by 1 digit, up to 3 digits by 2 digits",
+                    "description": "multiplication algorithm up to 4 digits by 1 digit, up to 3 digits by 2 digits",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 117,
+                    "skill": "division algorithm (up to 4 digits by 1 digit)",
+                    "description": "division algorithm (up to 4 digits by 1 digit)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 118,
+                    "skill": "solving up to 3-step word problems involving the 4 operations",
+                    "description": "solving up to 3-step word problems involving the 4 operations",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 35,
+            "track": "Mixed Numbers and Improper Fractions",
+            "description": "Mixed Numbers and Improper Fractions",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 119,
+                    "skill": "mixed numbers, improper fractions and their relationships",
+                    "description": "mixed numbers, improper fractions and their relationships",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 36,
+            "track": "Fraction of a Set of Objects",
+            "description": "Fraction of a Set of Objects",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 120,
+                    "skill": "fraction as part of a set of objects",
+                    "description": "fraction as part of a set of objects",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 37,
+            "track": "Addition and subtraction of fractions",
+            "description": "Addition and subtraction of fractions",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 121,
+                    "skill": "adding and subtracting fractions with denominators of given fractions not exceeding 12 and not more than 2 different denominators",
+                    "description": "adding and subtracting fractions with denominators of given fractions not exceeding 12 and not more than 2 different denominators",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 122,
+                    "skill": "solving up to 2-step word problems involving addition and subtraction of fractions",
+                    "description": "solving up to 2-step word problems involving addition and subtraction of fractions",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 38,
+            "track": "Decimals up to 3 decimal places",
+            "description": "Decimals up to 3 decimal places",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 123,
+                    "skill": "notation and representation and place values (tenths, hundredths, thousandths)",
+                    "description": "notation and representation and place values (tenths, hundredths, thousandths)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 124,
+                    "skill": "comparing and ordering decimals",
+                    "description": "comparing and ordering decimals",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 125,
+                    "skill": "dividing a whole number by a whole number with quotient as a decimal",
+                    "description": "dividing a whole number by a whole number with quotient as a decimal",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 126,
+                    "skill": "converting decimals to fractions",
+                    "description": "converting decimals to fractions",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 127,
+                    "skill": "converting fractions to decimals when the denominator is a factor of 10 or 100",
+                    "description": "converting fractions to decimals when the denominator is a factor of 10 or 100",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 128,
+                    "skill": "rounding decimals to the nearest whole number, 1 decimal place and 2 decimal places",
+                    "description": "rounding decimals to the nearest whole number, 1 decimal place and 2 decimal places",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 39,
+            "track": "Addition and Subtraction of Decimals",
+            "description": "Addition and Subtraction of Decimals",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 129,
+                    "skill": "adding and subtracting decimals (up to 2 decimal places)",
+                    "description": "adding and subtracting decimals (up to 2 decimal places)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 40,
+            "track": "Multiplication and Division of decimals",
+            "description": "Multiplication and Division of decimals",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 130,
+                    "skill": "multiplying and dividing decimals (up to 2 decimal places) by a 1-digit whole numbers for decimals up to 3 dec places",
+                    "description": "multiplying and dividing decimals (up to 2 decimal places) by a 1-digit whole numbers for decimals up to 3 dec places",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 131,
+                    "skill": "solving up to 2-step word problems involving the  operations",
+                    "description": "solving up to 2-step word problems involving the  operations",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 132,
+                    "skill": "rounding off answers to a specified degree of accuracy",
+                    "description": "rounding off answers to a specified degree of accuracy",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 41,
+            "track": "Time Year 4",
+            "description": "Time Year 4",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 133,
+                    "skill": "measuring time in seconds",
+                    "description": "measuring time in seconds",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 134,
+                    "skill": "24-hour clock",
+                    "description": "24-hour clock",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 135,
+                    "skill": "solving problems involving time in 24-hour clock",
+                    "description": "solving problems involving time in 24-hour clock",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 42,
+            "track": "Area and Perimeter Year 4",
+            "description": "Area and Perimeter Year 4",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 7,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 136,
+                    "skill": "finding one dimension of a rectangle given the other dimension and its area/perimeter",
+                    "description": "finding one dimension of a rectangle given the other dimension and its area/perimeter",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 137,
+                    "skill": "finding the length of one side of a square given its area/perimeter",
+                    "description": "finding the length of one side of a square given its area/perimeter",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 138,
+                    "skill": "finding the area of figures made up of rectanges and squares",
+                    "description": "finding the area of figures made up of rectanges and squares",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 43,
+            "track": "Angles Year 4",
+            "description": "Angles Year 4",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 7,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 139,
+                    "skill": "using notation such as   ∠ABC and ∠a to name angles",
+                    "description": "using notation suc as   ∠ABC and ∠a to name angles",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 140,
+                    "skill": "measuring angles in degrees",
+                    "description": "measuring angles in degrees",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 141,
+                    "skill": "relating quarter, half and complete turns to angles in degrees",
+                    "description": "relating quarter, half and complete turns to angles in degrees",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 142,
+                    "skill": "8-point compass",
+                    "description": "8-point compass",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 44,
+            "track": "Rectangle and Square",
+            "description": "Rectangle and Square",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 7,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 143,
+                    "skill": "properties of rectangle and square, excluding diagonal properties",
+                    "description": "properties of rectangle and square, excluding diagonal properties",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 45,
+            "track": "Line Symmetry",
+            "description": "Line Symmetry",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 7,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 144,
+                    "skill": "identifying symmetric figures",
+                    "description": "identifying symmetric figures",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 145,
+                    "skill": "determining whether a straight line is a line of symmetry of a symmetric figure",
+                    "description": "determining whether a straight line is a line of symmetry of a symmetric figure",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 46,
+            "track": "Tables and Line Graphs",
+            "description": "Tables and Line Graphs",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 5,
+            "level_id": 5,
+            "skills": [
+                {
+                    "id": 146,
+                    "skill": "completing a table from given data",
+                    "description": "completing a table from given data",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 147,
+                    "skill": "reading and interpreting data from tables/line graphs",
+                    "description": "reading and interpreting data from tables/line graphs",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 148,
+                    "skill": "solve 1-step problems using data from tables/graphs",
+                    "description": "solve 1-step problems using data from tables/graphs",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 47,
+            "track": "Numbers up to 10\nmillion \nFour Operations",
+            "description": "Numbers up to 10\nmillion \nFour Operations",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 149,
+                    "skill": "reading and writing numbers in numerals and in words up to 10 million",
+                    "description": "reading and writing numbers in numerals and in words up to 10 million",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 150,
+                    "skill": "rounding off numbers to the nearest 1000.",
+                    "description": "rounding off numbers to the nearest 1000.",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 48,
+            "track": "Four Operations to 10 million",
+            "description": "Four Operations to 10 million",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 151,
+                    "skill": "multiplication and division by tens, hundreds and thousands without using calculators",
+                    "description": "multiplication and division by tens, hundreds and thousands without using calculators",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 152,
+                    "skill": "solving word problems involving the 4 operations to 10m",
+                    "description": "solving word problems involving the 4 operations to 10m",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 153,
+                    "skill": "estimation of answers in calculations",
+                    "description": "estimation of answers in calculations",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 154,
+                    "skill": "checking reasonableness of answers",
+                    "description": "checking reasonableness of answers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 49,
+            "track": "Order of Operations to 10 million",
+            "description": "Order of Operations to 10 million",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 155,
+                    "skill": "combined operations involving the 4 operations",
+                    "description": "combined operations involving the 4 operations",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 156,
+                    "skill": "use of brackets",
+                    "description": "use of brackets",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 50,
+            "track": "Concept of fraction as division",
+            "description": "Concept of fraction as division",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 157,
+                    "skill": "association of a fraction with division",
+                    "description": "association of a fraction with division",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 158,
+                    "skill": "conversion between fractions and decimals",
+                    "description": "conversion between fractions and decimals",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 51,
+            "track": "Four operations of fractions",
+            "description": "Four operations of fractions",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 159,
+                    "skill": "addition and subtraction of proper fractions without using calculators",
+                    "description": "addition and subtraction of proper fractions without using calculators",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 160,
+                    "skill": "addition and subtraction of mixed numbers",
+                    "description": "addition and subtraction of mixed numbers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 161,
+                    "skill": "multiplication of a proper fractions and a proper/ improper fraction without using calculators",
+                    "description": "multiplication of a proper fractions and a proper/ improper fraction without using calculators",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 162,
+                    "skill": "multiplication of an improper fraction and an improper fraction,",
+                    "description": "multiplication of an improper fraction and an improper fraction,",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 163,
+                    "skill": "multiplication of a mixed number and a whole number",
+                    "description": "multiplication of a mixed number and a whole number",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 164,
+                    "skill": "division of a proper fraction by a whole number without using calculators",
+                    "description": "division of a proper fraction by a whole number without using calculators",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 165,
+                    "skill": "solving word problems involving the 4 operation",
+                    "description": "solving word problems involving the 4 operation",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 52,
+            "track": "Four operations of decimals",
+            "description": "Four operations of decimals",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 166,
+                    "skill": "multiplication and division of decimals (up to 3 decimal places) by tens, hundreds and thousands without using calculatorsoperations, • rounding off answers to a specified degree of accuracy, • estimation of answers in calculations, • checking reasonablen",
+                    "description": "multiplication and division of decimals (up to 3 decimal places) by tens, hundreds and thousands without using calculatorsoperations, • rounding off answers to a specified degree of accuracy, • estimation of answers in calculations, • checking reasonablen",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 167,
+                    "skill": "solving word problems involving the 4 operations",
+                    "description": "solving word problems involving the 4 operations",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 168,
+                    "skill": "rounding off answers to a specified degree of accuracy",
+                    "description": "rounding off answers to a specified degree of accuracy",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 169,
+                    "skill": "estimation of answers in calculations",
+                    "description": "estimation of answers in calculations",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 170,
+                    "skill": "checking reasonableness of answers",
+                    "description": "checking reasonableness of answers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 53,
+            "track": "Percentage Year 5",
+            "description": "Percentage Year 5",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 171,
+                    "skill": "expressing a part of a whole as a percentage",
+                    "description": "expressing a part of a whole as a percentage",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 172,
+                    "skill": "use of the percentage symbol (%)",
+                    "description": "use of the percentage symbol (%)",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 0,
+                    "track_id": null
+                },
+                {
+                    "id": 173,
+                    "skill": "writing fractions and decimals as percentages, and vice versa",
+                    "description": "writing fractions and decimals as percentages, and vice versa",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 174,
+                    "skill": "finding a percentage part of a whole",
+                    "description": "finding a percentage part of a whole",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 175,
+                    "skill": "solving up to 2-step word problems involving percentage",
+                    "description": "solving up to 2-step word problems involving percentage",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 176,
+                    "skill": "discount, GST and annual interest",
+                    "description": "discount, GST and annual interest",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 54,
+            "track": "Ratio Year 5",
+            "description": "Ratio Year 5",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 1,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 177,
+                    "skill": "interpretation of a : b and a : b : c, where a, b and c are whole numbers",
+                    "description": "interpretation of a : b and a : b : c, where a, b and c are whole numbers",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 178,
+                    "skill": "writing equivalent ratios",
+                    "description": "writing equivalent ratios",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 179,
+                    "skill": "expressing a ratio in its simplest form",
+                    "description": "expressing a ratio in its simplest form",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:36",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 180,
+                    "skill": "finding the ratio of two or three given quantities",
+                    "description": "finding the ratio of two or three given quantities",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 181,
+                    "skill": "finding the missing term in a pair of equivalent ratios",
+                    "description": "finding the missing term in a pair of equivalent ratios",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 182,
+                    "skill": "finding one quantity given the other quantity and their ratio",
+                    "description": "finding one quantity given the other quantity and their ratio",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 183,
+                    "skill": "solving up to 2-step word problems involving ratio",
+                    "description": "solving up to 2-step word problems involving ratio",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 55,
+            "track": "Length, mass and volume Year 5",
+            "description": "Length, mass and volume Year 5",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 184,
+                    "skill": "conversion of a measurement from a smaller unit to a larger unit in decimal form, and vice versa",
+                    "description": "conversion of a measurement from a smaller unit to a larger unit in decimal form, and vice versa",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 56,
+            "track": "Area of triangle",
+            "description": "Area of triangle",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 185,
+                    "skill": "identifying the base of a triangle and its corresponding height,",
+                    "description": "identifying the base of a triangle and its corresponding height,",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 186,
+                    "skill": "use of formula to calculate the area of a triangle",
+                    "description": "use of formula to calculate the area of a triangle",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        },
+        {
+            "id": 57,
+            "track": "Volume of cube and cuboid Year 5",
+            "description": "Volume of cube and cuboid Year 5",
+            "user_id": 1,
+            "image": null,
+            "status_id": 3,
+            "field_id": 6,
+            "level_id": 6,
+            "skills": [
+                {
+                    "id": 187,
+                    "skill": "building solids with unit cubes",
+                    "description": "building solids with unit cubes",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 188,
+                    "skill": "measurement of volume in cubic units",
+                    "description": "measurement of volume in cubic units",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 189,
+                    "skill": "measurement of volume in cubic centimetres (cm3 )/ cubic metres (m3 )",
+                    "description": "measurement of volume in cubic centimetres (cm3 )/ cubic metres (m3 )",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 190,
+                    "skill": "use of formula to calculate the volume of a cube/ cuboid",
+                    "description": "use of formula to calculate the volume of a cube/ cuboid",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 191,
+                    "skill": "finding the volume of liquid in a rectangular tank",
+                    "description": "finding the volume of liquid in a rectangular tank",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 192,
+                    "skill": "conversion between liters, ml and cm3",
+                    "description": "conversion between liters, ml and cm3",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                },
+                {
+                    "id": 193,
+                    "skill": "solving up to 3-step word problems involving the volume of a cube/ cuboid.",
+                    "description": "solving up to 3-step word problems involving the volume of a cube/ cuboid.",
+                    "image": null,
+                    "lesson_link": null,
+                    "status_id": 1,
+                    "created_at": "2018-05-19 04:08:37",
+                    "check": 1,
+                    "track_id": null
+                }
+            ],
+            "users": []
+        }
+    ],
+    "user": {
+        "id": 2,
+        "name": "pamelaliusm@gmail.com",
+        "firstname": null,
+        "lastname": null,
+        "contact": "94357225",
+        "email": "pamelaliusm@gmail.com",
+        "is_admin": 1,
+        "maxile_level": "291.18",
+        "game_level": 43,
+        "date_of_birth": "1966-02-20 00:00:00",
+        "last_test_date": "2021-09-16 03:04:28",
+        "next_test_date": "2018-03-18 01:23:25",
+        "image": "https://s.gravatar.com/avatar/de05b94db655e5c2bd350776b5a28553?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fpa.png",
+        "updated_at": "2023-06-09 03:26:56",
+        "diagnostic": 0
+    },
+    "code": 201
+}
