@@ -61,7 +61,7 @@ h3 {
 .App.authenticated {
   text-align: center;
   padding-top: 50px;
-  background-color: #f0f8ff; /* Light blue background */
+  background-color: "white"; /* Light blue background */
 }
 
 .user-info {
