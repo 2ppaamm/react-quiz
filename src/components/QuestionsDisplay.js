@@ -171,9 +171,7 @@ const QuestionsDisplay = () => {
         {activeQuestion?.question && renderKaTex(DOMPurify.sanitize(activeQuestion.question))}
       </div>
       {activeQuestion?.question_image && (
-        <div className="question-image-container">
           <img src={`${baseUrl}${activeQuestion.question_image}`} alt="Question" className="question-image" />
-        </div>
       )}
       {activeQuestion.skill && activeQuestion.skill.lesson_link && (
         <div className="watch-video-link" onClick={handleWatchVideo}>
@@ -216,39 +214,6 @@ const QuestionsDisplay = () => {
         </button>
       )}
       </div>
-      {showOverlay && (
-        <div className="overlay" onClick={goToNextQuestion}>
-          {isAnswerCorrect && <Confetti width={window.width} height={window.height} />}
-          <div className="feedback-parallelogram">
-            {isAnswerCorrect ? (
-              <>
-                <span>
-                  {(() => {
-                    switch (activeQuestion.difficulty_id + 1) {
-                      case 2:
-                        return "2 kudos for a Great job!";
-                      case 3:
-                        return "Awesome! You earned 3 kudos!";
-                      case 4:
-                        return "Incredible! You added 4 kudos!";
-                      default:
-                        return "Woohoo!";
-                    }
-                  })()}
-                </span>
-              </>
-            ) : (
-              <span>Incorrect... 1 kudo for trying. 🙂</span>
-            )}
-          </div>
-          <div className="feedback-icon">
-            {Array(isAnswerCorrect ? activeQuestion.difficulty_id + 1 : 1).fill().map((_, i) => (
-              <img id="coin" key={i} src={`${process.env.PUBLIC_URL}/images/kudos.png`} alt="Kudos" />
-            ))}
-          </div>
-          {/*<button className="next-button">Next</button>*/}
-        </div>
-      )}
     </div>
   );
 };

@@ -1,16 +1,29 @@
+.name-text-container {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.action-button:hover {
+  background-color: #45a049; /* Darker shade for hover effect */
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: #f0f0f0; /* Lighter text color for the subtitle */
+}
+
+#subjectselectsub {
+  color: black;
+}
+
+
 /* Mobile Styles */
 @media only screen and (max-width: 480px) {
-  .alt-home-container {
-    
-      }
+
   .alternative-welcome-image {
     max-width: 100%;
     border-radius: 8px;
     height: auto;
-  }
-  .name-text-container {
-    max-width: 100%;
-    margin-top: 10px;
   }
   .options-container {
     display: flex;
@@ -33,55 +46,171 @@
     text-align: center;
   
   }
-  
-  .action-button:hover {
-    background-color: #45a049; /* Darker shade for hover effect */
-  }
-  
-  .subtitle {
-    font-size: 0.8rem;
-    color: #f0f0f0; /* Lighter text color for the subtitle */
-  }
-  
-  #subjectselectsub {
-    color: black;
-  }
-  
-  
 }
 
 /* Tablet Styles */
-@media only screen and (min-width: 481px) and (max-width: 1024px) {
-  .alt-home-container {
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+
+  .alternative-welcome-image {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the space between buttons */
+    padding-right: 40px;
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
     text-align: center;
-    background-color: #45a049;
-    padding: 20px;
+  
+  }
+  
+}
+
+
+/* Tablet and Small Screen  */
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+
+  .alternative-welcome-image {
+    width: 75%;
+    border-radius: 8px;
+    height: auto;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the space between buttons */
+    align-items: center;
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 70%;
+    max-width: 70%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  
   }
 }
 
-/* Small Laptop Styles */
-@media only screen and (min-width: 1025px) and (max-width: 1366px) {
-  .alt-home-container {
-    text-align: center;
-    background-color:royalblue;
-    padding: 20px;
+
+/* Small Screen  */
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+
+  .alternative-welcome-image {
+    width: 75%;
+    border-radius: 8px;
+    height: auto;
   }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the space between buttons */
+    align-items: center;
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 70%;
+    max-width: 70%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  
+  }
+  
 }
 
-/* Medium Laptop/Desktop Styles */
-@media only screen and (min-width: 1367px) and (max-width: 1920px) {
-  .alt-home-container {
-    text-align: center;
-    background-color:goldenrod;
-    padding: 20px;
+/* Medium */
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+
+  .alternative-welcome-image {
+    width: 30%;
+    border-radius: 8px;
+    height: auto;
   }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adjust the space between buttons */
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 30%;
+    max-width: 30%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  
+  }
+
 }
+
+
 
 /* Large Desktop and above (including 34-inch ultrawide monitors) */
 @media only screen and (min-width: 1921px) {
-  .alt-home-container {
+
+  .alternative-welcome-image {
+    width: 30%;
+    border-radius: 8px;
+    height: auto;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adjust the space between buttons */
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 30%;
+    max-width: 30%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
     text-align: center;
-    background-color:red;
-    padding: 20px;
+  
   }
 }

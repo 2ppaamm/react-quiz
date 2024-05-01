@@ -12,41 +12,20 @@ body, html {
     z-index: 10;
     box-sizing: border-box;
 }
+
 .question-container.disabled * {
   pointer-events: none; /* Disable all interactions within the container */
 }
 
-.question-text {
-  background-color: #F9F9F9;
-  height: 55%;
-  border-radius: 8px;
-  font-size: 20px;
-  margin: 20px 0;
-  justify-content: center;
-  width: 100%; /* Full width to align with answer buttons */
-  padding: 20px 0;
-  text-align: center; /* Ensures text is centered */
-}
 
-.question-image-container {
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  width:100%;
-  padding: 20px 0;
-  height: 55%;
-  grid-column: 1 / -1;
-}
 
 /* Adjustments for when a question has an image */
 .question-image {
+  background-color: #eee;
   width: 100%;
   height: auto;
   object-fit: contain; /* Ensures the aspect ratio is maintained */
   border-radius: 8px;
-  margin: 20px 0;
 }
 
 .answer-option, .fib-input, .next-button {
@@ -64,56 +43,27 @@ body, html {
   font: inherit;
   cursor: pointer;
 }
-
+.question-submit-button {
+  grid-column: 1 / -1; /* Makes the button span all columns */
+  background-color: #960000;
+  color: white;
+  padding: 10px;
+  margin: 10px 0; /* Adds margin to the top and bottom for spacing */
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%; /* Ensures full width */
+  font: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .answer-option.selected {
   background-color: #d0acac; /* Light green background for selected options */
   border: 3px solid #960000; /* Darker green border */
 }
 
-.answer-options-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns */
-  grid-template-rows: 1fr 1fr; /* Two rows */
-  gap: 20px; /* Space between options */
-  padding: 20px 0; /* Padding around the grid */
-  width: 100%; /* Full width of the container */
-  max-width: 600px; /* Maximum width of the container */
-  margin: auto; /* Centering the grid */
-}
-
-.answer-option {
-  background-color: #eee;
-  color: #222;
-  width:100%;
-  height: auto;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-  text-align: center;
-  padding: 15px;
-  font-size: 16px; /* Adjust font size as necessary */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s;
-}
-
-.question-submit-button {
-    grid-column: 1 / -1; /* Makes the button span all columns */
-    background-color: #960000;
-    color: white;
-    padding: 15px;
-    margin: 20px 0; /* Adds margin to the top and bottom for spacing */
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    text-align: center;
-    width: 100%; /* Ensures full width */
-    font: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 /* Styles specifically for correct and incorrect answers */
@@ -260,3 +210,69 @@ input::placeholder{
   text-align: center; /* or left, based on preference */
   margin: 0.5em 0 !important;
 }
+
+
+.question-text {
+  background-color: #F9F9F9;
+  border-radius: 8px;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 20px 0;
+  justify-content: center;
+  width: 100%; /* Full width to align with answer buttons */
+  text-align: center; /* Ensures text is centered */
+}
+.answer-options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  grid-template-rows: 1fr 1fr; /* Two rows */
+  gap: 10px; /* Space between options */
+  padding: 10px 0; /* Padding around the grid */
+  width: 100%; /* Full width of the container */
+  margin: auto; /* Centering the grid */
+}
+
+.answer-option {
+  background-color: #eee;
+  color: #222;
+  width:100%;
+  height: auto;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 10px 0px;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px; /* Adjust font size as necessary */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+/* Tablet and Small Screen  */
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+  .question-container {
+    padding: 20px 15% 20px 15%;
+}
+}
+
+
+/* Small Screen  */
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+
+  .question-container {
+    padding: 20px 25% 20px 25%;
+}
+}
+/* Medium */
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+  /* Adjustments for when a question has an image */
+  .question-container {
+    padding: 20px 32% 20px 32%;
+}
+ 
+
+}
+

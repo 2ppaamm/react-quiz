@@ -39,7 +39,7 @@ const AltHomePage = () => {
   };
 
  return (
-    <div >
+    <div className="alt-home-container">
       <img
         className="alternative-welcome-image"
         src={`${process.env.PUBLIC_URL}/images/welcome.png`}
