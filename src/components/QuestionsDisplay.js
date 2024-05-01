@@ -166,8 +166,8 @@ const QuestionsDisplay = () => {
 
   return (
     <div className="question-container">
-    <div className={showOverlay ? 'disabled-questions' : ''}>
-      <div className="question-text">
+    <div className={showOverlay ? 'disabled-questions' : ''} >
+      <div className="question-text" >
         {activeQuestion?.question && renderKaTex(DOMPurify.sanitize(activeQuestion.question))}
       </div>
       {activeQuestion?.question_image && (

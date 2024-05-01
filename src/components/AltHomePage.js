@@ -39,13 +39,13 @@ const AltHomePage = () => {
   };
 
  return (
-    <div className="alt-home-container">
+    <div >
       <img
         className="alternative-welcome-image"
         src={`${process.env.PUBLIC_URL}/images/welcome.png`}
         alt="Welcome, Adventurer!"
       />
-      <h3>Hello, <strong>{user?.name || "Fellow Adventurer"}</strong>!</h3>
+      <div className='name-text-container'>Hello, <strong>{user?.name || "Fellow Adventurer"}</strong>!</div>
       <p>Start My journey</p>
       <div className="options-container">
         <div className="action-button" onClick={handleDiagnosticTest}>

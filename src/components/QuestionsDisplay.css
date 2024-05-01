@@ -24,7 +24,7 @@ body, html {
   margin: 20px 0;
   justify-content: center;
   width: 100%; /* Full width to align with answer buttons */
-  padding: 20px;
+  padding: 20px 0;
   text-align: center; /* Ensures text is centered */
 }
 
@@ -35,7 +35,7 @@ body, html {
   align-items: center;
   border-radius: 8px;
   width:100%;
-  padding: 20px;
+  padding: 20px 0;
   height: 55%;
   grid-column: 1 / -1;
 }
@@ -75,7 +75,7 @@ body, html {
   grid-template-columns: 1fr 1fr; /* Two columns */
   grid-template-rows: 1fr 1fr; /* Two rows */
   gap: 20px; /* Space between options */
-  padding: 20px; /* Padding around the grid */
+  padding: 20px 0; /* Padding around the grid */
   width: 100%; /* Full width of the container */
   max-width: 600px; /* Maximum width of the container */
   margin: auto; /* Centering the grid */
