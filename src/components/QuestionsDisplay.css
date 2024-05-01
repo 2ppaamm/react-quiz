@@ -6,18 +6,32 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    padding: 20px;
     background-color: #FFFFFF;
+    padding: 0;
+    margin: 0;
     z-index: 10;
     box-sizing: border-box;
+}
+
+.header-container{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.backArrow {
+  font-size:"20px";
+  transition: background-color 0.3s ease;
 }
 
 .question-container.disabled * {
   pointer-events: none; /* Disable all interactions within the container */
 }
 
-
+.enable-questions{
+  width: 100%;
+}
 
 /* Adjustments for when a question has an image */
 .question-image {
@@ -26,8 +40,21 @@ body, html {
   height: auto;
   object-fit: contain; /* Ensures the aspect ratio is maintained */
   border-radius: 8px;
+  
 }
-
+.image-container{
+  padding: 0px 10px 0px 20px;
+}
+.bottom-container{
+  padding: 0px 10px 0px 20px;
+}
+.question-text-container{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px 0px 10px;
+}
 .answer-option, .fib-input, .next-button {
   background-color: #eee;
   color: #222;
@@ -253,26 +280,56 @@ input::placeholder{
 
 /* Tablet and Small Screen  */
 @media only screen and (min-width: 601px) and (max-width: 800px) {
-  .question-container {
-    padding: 20px 15% 20px 15%;
-}
+  .question-text-container{
+    padding: 0px 10% 0px 10%;
+  }
+  .image-container{
+    padding: 0px 10% 0px 12%;
+  }
+  .bottom-container{
+    padding: 0px 10% 0px 12%;
+  }
+
 }
 
 
 /* Small Screen  */
-@media only screen and (min-width: 801px) and (max-width: 1024px) {
+@media only screen and (min-width: 700px) and (max-width: 950px) {
+  .question-text-container{
+    padding: 0px 20% 0px 20%;
+  }
+  .image-container{
+    padding: 0px 20% 0px 22%;
+  }
+  .bottom-container{
+    padding: 0px 20% 0px 22%;
+  }
 
-  .question-container {
-    padding: 20px 25% 20px 25%;
 }
-}
+
 /* Medium */
-@media only screen and (min-width: 1025px) and (max-width: 1920px) {
-  /* Adjustments for when a question has an image */
-  .question-container {
-    padding: 20px 32% 20px 32%;
+@media only screen and (min-width: 950px) and (max-width: 1920px) {
+  .question-text-container{
+    padding: 0px 30% 0px 30%;
+  }
+  .image-container{
+    padding: 0px 30% 0px 32%;
+  }
+  .bottom-container{
+    padding: 0px 30% 0px 32%;
+  }
 }
- 
 
+/* Medium */
+@media only screen and (min-width: 1921px) {
+  .question-text-container{
+    padding: 0px 30% 0px 30%;
+  }
+  .image-container{
+    padding: 0px 30% 0px 32%;
+  }
+  .bottom-container{
+    padding: 0px 30% 0px 32%;
+  }
 }
 

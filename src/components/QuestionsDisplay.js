@@ -7,6 +7,9 @@ import 'katex/dist/katex.min.css';
 import { useQuestions } from './QuestionsContext';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee,faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+
 import parse from 'html-react-parser';
 import Confetti from 'react-confetti';
 
@@ -164,21 +167,33 @@ const QuestionsDisplay = () => {
     }
   };
 
+  const handleGoBack = () => {
+    navigate('/'); // Navigates to the root page
+  };
+
   return (
     <div className="question-container">
-    <div className={showOverlay ? 'disabled-questions' : ''} >
+    <div className={showOverlay ? 'disabled-questions' : 'enable-questions'} >
+      <div className="header-container">
+      {/* Replace with an appropriate icon for the back arrow */}
+      <FontAwesomeIcon icon={faAngleLeft} style={{fontSize:"20px"}} onClick={handleGoBack} className="backArrow"/>
+    <div className="question-text-container">
       <div className="question-text" >
         {activeQuestion?.question && renderKaTex(DOMPurify.sanitize(activeQuestion.question))}
       </div>
+      </div>
+      </div>
+      <div className="image-container">
       {activeQuestion?.question_image && (
           <img src={`${baseUrl}${activeQuestion.question_image}`} alt="Question" className="question-image" />
       )}
+      </div>
       {activeQuestion.skill && activeQuestion.skill.lesson_link && (
         <div className="watch-video-link" onClick={handleWatchVideo}>
           Watch Video <i className="fas fa-video watch-video-icon"></i>
         </div>
       )}
-
+      <div className='bottom-container'>
       {activeQuestion.type_id === 1 && (
         <div className="answer-options-container">
           { [...Array(4)].map((_, index) => {
@@ -213,6 +228,7 @@ const QuestionsDisplay = () => {
           Submit
         </button>
       )}
+      </div>
       </div>
     </div>
   );
