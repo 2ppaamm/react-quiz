@@ -2,23 +2,28 @@ body, html {
   background-color: #FFFFFF;
   perspective: 200px;
 }
-.question-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FFFFFF;
-    padding: 0;
-    margin: 0;
-    z-index: 10;
-    box-sizing: border-box;
+.header-container {
+  display: flex;
+  height: 10vh;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-
-.header-container{
-  display:flex;
+.font-container {
+  display: flex;
+  align-items: flex-end;
   flex-direction: row;
-  align-items: center;
-
 }
+.question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  padding: 20px 10% 20px 10%;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
 
 .backArrow {
   font-size:"20px";
@@ -42,12 +47,8 @@ body, html {
   border-radius: 8px;
   
 }
-.image-container{
-  padding: 0px 10px 0px 20px;
-}
-.bottom-container{
-  padding: 0px 10px 0px 20px;
-}
+
+
 .question-text-container{
   display: flex;
   width: 100%;
@@ -86,33 +87,44 @@ body, html {
   justify-content: center;
   align-items: center;
 }
+.button-text {
+  display: flex; /* Makes the span behave like a block element */
+  width: 60%;
+  flex-direction: column;
+  text-align: end; /* centers the text horizontally within the span */
+  /* Rough size of the icon plus some space */
+}
+.icon-right {
+  display: flex; /* Makes the span behave like a block element */
+  width: 45%;
+  flex-direction: column;
+  align-items: flex-end;
+
+  /* Push the icon to the right */
+  /* Additional styling for your icon, if needed */
+}
 .answer-option.selected {
   background-color: #d0acac; /* Light green background for selected options */
   border: 3px solid #960000; /* Darker green border */
 }
-
-
 
 /* Styles specifically for correct and incorrect answers */
 .correct, .question-submit-button.correct, .next-button.correct {
   background-color: #4CAF50; /* Green */
   color: white;
   z-index: 20; /* Ensure it is above the overlay */
-  position: fixed; /* Position relative to the viewport */
   top: 10vh; /* 10% from the top of the viewport */
   left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust horizontal positioning to truly center */
 }
 
 .incorrect, .question-submit-button.incorrect, .next-button.incorrect {
   background-color: #f44336; /* Red */
   color: white;
   z-index: 20; /* Ensure it is above the overlay */
-  position: fixed; /* Position relative to the viewport */
   top: 10vh; /* 10% from the top of the viewport */
   left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust horizontal positioning to truly center */
 }
+
 /* Next button specific styling */
 /* Existing styles... */
 /* Overlay styles */
@@ -277,59 +289,38 @@ input::placeholder{
   align-items: center;
   transition: background-color 0.3s;
 }
+.primary{
+  align-self: flex-start;
+  color: #5E5E5E;
+  font-size: 15px;
+}
+.page-container {
+  
+}
 
 /* Tablet and Small Screen  */
 @media only screen and (min-width: 601px) and (max-width: 800px) {
-  .question-text-container{
-    padding: 0px 10% 0px 10%;
-  }
-  .image-container{
-    padding: 0px 10% 0px 12%;
-  }
-  .bottom-container{
-    padding: 0px 10% 0px 12%;
-  }
-
+  .question-container {
+    padding: 20px 15% 20px 15%;
+}
 }
 
 
 /* Small Screen  */
-@media only screen and (min-width: 700px) and (max-width: 950px) {
-  .question-text-container{
-    padding: 0px 20% 0px 20%;
-  }
-  .image-container{
-    padding: 0px 20% 0px 22%;
-  }
-  .bottom-container{
-    padding: 0px 20% 0px 22%;
-  }
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+
+  .question-container {
+    padding: 20px 27% 20px 27%;
+}
+}
+/* Medium */
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+  /* Adjustments for when a question has an image */
+  .question-container {
+    padding: 20px 35% 20px 35%;
 
 }
+ 
 
-/* Medium */
-@media only screen and (min-width: 950px) and (max-width: 1920px) {
-  .question-text-container{
-    padding: 0px 30% 0px 30%;
-  }
-  .image-container{
-    padding: 0px 30% 0px 32%;
-  }
-  .bottom-container{
-    padding: 0px 30% 0px 32%;
-  }
-}
-
-/* Medium */
-@media only screen and (min-width: 1921px) {
-  .question-text-container{
-    padding: 0px 30% 0px 30%;
-  }
-  .image-container{
-    padding: 0px 30% 0px 32%;
-  }
-  .bottom-container{
-    padding: 0px 30% 0px 32%;
-  }
 }
 

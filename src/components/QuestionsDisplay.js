@@ -8,8 +8,8 @@ import { useQuestions } from './QuestionsContext';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee,faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-
+import { faCoffee,faAngleLeft, faCheckCircle, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
+import StatusBar from './StatusBar';
 import parse from 'html-react-parser';
 import Confetti from 'react-confetti';
 
@@ -29,6 +29,7 @@ const QuestionsDisplay = () => {
 
   useEffect(() => {
     const testType = localStorage.getItem('testType');
+    console.log("Test type",testType);
     if (testType === 'subjectSelect' && activeQuestion?.skills?.lesson_link) {
       setShowVideoPopup(true);
     } else {
@@ -52,6 +53,7 @@ const QuestionsDisplay = () => {
             input.placeholder = 'Type your answer here'; // Update placeholder
       }    });
     }
+
   }, [activeQuestion]);
 
   const handleCloseVideoPopup = () => {
@@ -84,6 +86,7 @@ const QuestionsDisplay = () => {
   const handleSubmitMCQ = () => {
     if (selectedOption !== null) {
       const correct = parseInt(questions[activeQuestionIndex].correct_answer) === selectedOption;
+      console.log("isCorrect---",correct)
       setIsAnswerCorrect(correct);
       setUserAnswers(prevAnswers => [...prevAnswers, { question_id: questions[activeQuestionIndex].id, answer: selectedOption }]);
       setShowOverlay(true); // Show feedback
@@ -172,28 +175,33 @@ const QuestionsDisplay = () => {
   };
 
   return (
-    <div className="question-container">
-    <div className={showOverlay ? 'disabled-questions' : 'enable-questions'} >
-      <div className="header-container">
-      {/* Replace with an appropriate icon for the back arrow */}
+    <div className='page-container'>
+
+      {/* Header */}
+      <div className='header-container'>
+      <div className='font-container'>
       <FontAwesomeIcon icon={faAngleLeft} style={{fontSize:"20px"}} onClick={handleGoBack} className="backArrow"/>
-    <div className="question-text-container">
+      </div>
+      {/* Status bar */}
+      <StatusBar completed={12} total={30} />
+      </div>
+
+    <div className="question-container">
+      <div className='primary'>
+        Primary 4
+      </div>
+    <div className={showOverlay ? 'disabled-questions' : 'enable-questions'} >
       <div className="question-text" >
         {activeQuestion?.question && renderKaTex(DOMPurify.sanitize(activeQuestion.question))}
       </div>
-      </div>
-      </div>
-      <div className="image-container">
       {activeQuestion?.question_image && (
           <img src={`${baseUrl}${activeQuestion.question_image}`} alt="Question" className="question-image" />
       )}
-      </div>
       {activeQuestion.skill && activeQuestion.skill.lesson_link && (
         <div className="watch-video-link" onClick={handleWatchVideo}>
           Watch Video <i className="fas fa-video watch-video-icon"></i>
         </div>
       )}
-      <div className='bottom-container'>
       {activeQuestion.type_id === 1 && (
         <div className="answer-options-container">
           { [...Array(4)].map((_, index) => {
@@ -217,8 +225,11 @@ const QuestionsDisplay = () => {
               return null;
             })
           }
-          <button className="question-submit-button" onClick={handleSubmitMCQ}>
-            Submit
+          <button className={`question-submit-button ${isAnswerCorrect!==null? isAnswerCorrect?'correct':'incorrect':''}`} onClick={handleSubmitMCQ}>
+           
+           <span className="button-text">{isAnswerCorrect!==null? isAnswerCorrect?"Correct":"Incorrect" :"Submit"} </span>
+           <span className="icon-right"> {isAnswerCorrect!==null&&(isAnswerCorrect ?<FontAwesomeIcon icon={faCheckCircle}  />:<FontAwesomeIcon icon={faXmarkCircle}  />)}
+</span>
           </button>
         </div>
       )}
