@@ -12,22 +12,43 @@ import { faCoffee,faAngleLeft, faCheckCircle, faXmarkCircle } from '@fortawesome
 import StatusBar from './StatusBar';
 import parse from 'html-react-parser';
 import Confetti from 'react-confetti';
+import { ReactComponent as GameLevel } from '../game_level.svg';
+
 
 const QuestionsDisplay = () => {
-  const { fetchQuestions } = useQuestions();
+  const { fetchQuestions,loading,setLoading } = useQuestions();
   const { questions, testId, setQuestions, setTestId } = useQuestions();
   const { getIdTokenClaims } = useAuth0();
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
-  const [showOverlay, setShowOverlay] = useState(false);
   const navigate = useNavigate();
   const baseUrl = `${process.env.REACT_APP_BACKEND_URL}`;
   const activeQuestion = questions[activeQuestionIndex];
   const [showVideoPopup, setShowVideoPopup] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
+  const [answeredCount, setAnsweredCount] = useState(0);
+
+
 
   useEffect(() => {
+    //After five questions before submit go to success page 
+    //Result screen show animation
+    const fetchUserInfo = () => {
+      // Attempt to retrieve user info from localStorage
+      const storedUserInfo = localStorage.getItem('userInfo');
+      if (storedUserInfo) {
+        const userInfo = JSON.parse(storedUserInfo);
+        if (userInfo && userInfo.game_level !==undefined ){
+          setUserInfo(userInfo)
+        }
+      } else {
+        // Optionally, handle the case where no user info is found in localStorage
+        console.log('No user info found in localStorage.');
+      }
+    };
+    fetchUserInfo();
     const testType = localStorage.getItem('testType');
     console.log("Test type",testType);
     if (testType === 'subjectSelect' && activeQuestion?.skills?.lesson_link) {
@@ -44,8 +65,22 @@ const QuestionsDisplay = () => {
     }
   };
 
+  const handleOverlay = () => {
+    if(isAnswerCorrect)
+    {
+      goToNextQuestion()
+    }
+    else
+    {
+      goToNextQuestion()
+      setIsAnswerCorrect(null)
+    }
+    setAnsweredCount(count=>++count)
+    };
+
+
   useEffect(() => {
-    if (activeQuestion.type_id === 2) {
+    if (activeQuestion?.type_id === 2) {
       // Clear inputs and set placeholders if the current question is of type 2
       const inputs = document.querySelectorAll('.lineinput');
       inputs.forEach(input => {
@@ -53,7 +88,6 @@ const QuestionsDisplay = () => {
             input.placeholder = 'Type your answer here'; // Update placeholder
       }    });
     }
-
   }, [activeQuestion]);
 
   const handleCloseVideoPopup = () => {
@@ -86,10 +120,8 @@ const QuestionsDisplay = () => {
   const handleSubmitMCQ = () => {
     if (selectedOption !== null) {
       const correct = parseInt(questions[activeQuestionIndex].correct_answer) === selectedOption;
-      console.log("isCorrect---",correct)
       setIsAnswerCorrect(correct);
       setUserAnswers(prevAnswers => [...prevAnswers, { question_id: questions[activeQuestionIndex].id, answer: selectedOption }]);
-      setShowOverlay(true); // Show feedback
       setSelectedOption(null); // Reset selection
     }
   };
@@ -114,15 +146,13 @@ const QuestionsDisplay = () => {
 
       setIsAnswerCorrect(allAnswersCorrect); // Update the state based on the correctness of all answers
       setUserAnswers(prevAnswers => [...prevAnswers, { question_id: activeQuestion.id, answer: fibAnswers }]);
-      setShowOverlay(true); // Optionally, show overlay for feedback or moving to the next question
   };
 
   const goToNextQuestion = () => {
-    setShowOverlay(false);
-    if (activeQuestionIndex < questions.length - 1) {
+    if (activeQuestionIndex < 4) {
     // Not the last question, so move to the next question
     setActiveQuestionIndex(currentIndex => currentIndex + 1);
-      if (activeQuestion.type_id === 2) {
+      if (activeQuestion?.type_id === 2) {
         // Clear inputs and set placeholders if the current question is of type 2
         const inputs = document.querySelectorAll('.lineinput');
         inputs.forEach(input => {
@@ -142,6 +172,8 @@ const QuestionsDisplay = () => {
 
   const submitAnswers = async (event) => {
     // Prepare the payload for submitting answers
+    setLoading(true)
+    console.log("User Answers ---",userAnswers);
     const payload = {
         test: testId,
         question_id: userAnswers.map(a => a.question_id),
@@ -174,35 +206,41 @@ const QuestionsDisplay = () => {
     navigate('/'); // Navigates to the root page
   };
 
+  if(loading)
+  return (
+    <div style={{display:'flex',alignItems:"flex-start"}}>
+    <p>Loading...</p>
+    </div>
+  )
+
   return (
     <div className='page-container'>
-
       {/* Header */}
       <div className='header-container'>
       <div className='font-container'>
-      <FontAwesomeIcon icon={faAngleLeft} style={{fontSize:"20px"}} onClick={handleGoBack} className="backArrow"/>
+        <span className='back-arrow'><FontAwesomeIcon icon={faAngleLeft} onClick={handleGoBack} className="backArrow"/></span>
+        <span className='game-level-container'> <div className='game-level'><GameLevel width={20} height={20} style={{paddingRight:8}}/>{userInfo?.game_level}</div></span>
       </div>
       {/* Status bar */}
-      <StatusBar completed={12} total={30} />
+      <StatusBar completed={answeredCount} total={5} />
       </div>
 
     <div className="question-container">
       <div className='primary'>
         Primary 4
       </div>
-    <div className={showOverlay ? 'disabled-questions' : 'enable-questions'} >
       <div className="question-text" >
         {activeQuestion?.question && renderKaTex(DOMPurify.sanitize(activeQuestion.question))}
       </div>
       {activeQuestion?.question_image && (
           <img src={`${baseUrl}${activeQuestion.question_image}`} alt="Question" className="question-image" />
       )}
-      {activeQuestion.skill && activeQuestion.skill.lesson_link && (
+      {activeQuestion?.skill && activeQuestion.skill.lesson_link && (
         <div className="watch-video-link" onClick={handleWatchVideo}>
           Watch Video <i className="fas fa-video watch-video-icon"></i>
         </div>
       )}
-      {activeQuestion.type_id === 1 && (
+      {activeQuestion?.type_id === 1 && (
         <div className="answer-options-container">
           { [...Array(4)].map((_, index) => {
               const answerText = activeQuestion[`answer${index}`];
@@ -226,22 +264,24 @@ const QuestionsDisplay = () => {
             })
           }
           <button className={`question-submit-button ${isAnswerCorrect!==null? isAnswerCorrect?'correct':'incorrect':''}`} onClick={handleSubmitMCQ}>
-           
            <span className="button-text">{isAnswerCorrect!==null? isAnswerCorrect?"Correct":"Incorrect" :"Submit"} </span>
-           <span className="icon-right"> {isAnswerCorrect!==null&&(isAnswerCorrect ?<FontAwesomeIcon icon={faCheckCircle}  />:<FontAwesomeIcon icon={faXmarkCircle}  />)}
-</span>
+           <span className="icon-right"> {isAnswerCorrect!==null&&(isAnswerCorrect ?<FontAwesomeIcon icon={faCheckCircle}/>:<FontAwesomeIcon icon={faXmarkCircle}  />)}
+        </span>
           </button>
         </div>
       )}
 
-    {activeQuestion.type_id === 2 && (
-        <button className="question-submit-button" onClick={handleFIBSubmit}>
+    {activeQuestion?.type_id === 2 && (
+        <button className="question-submit-button ${isAnswerCorrect!==null? isAnswerCorrect?'correct':'incorrect':''}" onClick={handleFIBSubmit}>
           Submit
         </button>
       )}
       </div>
+      {/* Overlay */}
+      {
+       isAnswerCorrect!==null&&(<div onClick={handleOverlay} className={`overlay ${isAnswerCorrect!==null? isAnswerCorrect?'overlay-correct':'overlay-incorrect':''}`}></div>)
+      }
       </div>
-    </div>
   );
 };
 export default QuestionsDisplay;

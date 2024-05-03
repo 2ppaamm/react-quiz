@@ -13,6 +13,7 @@ import PurchaseEnrollment from './components/PurchaseEnrollment';
 import ResultsPage from './components/ResultsPage';
 import { QuestionsProvider } from './components/QuestionsContext';
 import { fetchUserInfo } from './components/fetchUserInfo';
+import Success from './components/Success';
 import ErrorPage from './components/ErrorPage';
 
 function App() {
@@ -61,6 +62,8 @@ function App() {
               <Route path="/subject-select" element={<SubjectSelection />} />
               <Route path="/questions-display" element={<QuestionsDisplay />} /> 
               <Route path="/results" element={<ResultsPage />} />
+              <Route path="/success" element={<Success />} />
+
             </Routes>
           ) : (
             <p>Loading or not authenticated...</p>

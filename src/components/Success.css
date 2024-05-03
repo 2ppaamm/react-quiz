@@ -1,0 +1,33 @@
+/* ResultsPage.css */
+.results-container {
+    background-color: #FFFFFF; /* Ensure white background */
+    text-align: center; /* Centering content */
+    padding: 20px; /* Add some padding around the content */
+  }
+  
+  .result-image {
+    width: 100%;
+    max-width: 600px; /* Limit the image width while keeping it responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Container for the percentage bar */
+  .percentage-bar-container {
+    width: 80%;
+    margin: 5% auto; /* Center the bar */
+    background-color: #eee;
+    height: 5px;
+    border-radius: 20px;
+    overflow: hidden; /* Ensures the inner bar's excess part is not visible */
+  }
+  
+  /* The actual percentage bar showing the result */
+  .percentage-bar {
+    background-color: #960000;
+    height: 100%;
+    /* Apply border-radius to the percentage bar itself */
+    border-radius: 20px;
+    /* Transition for smooth width change */
+    transition: width 0.3s ease-in-out;
+  }
+  

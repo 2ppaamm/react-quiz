@@ -14,7 +14,6 @@ export const QuestionsProvider = ({ children, navigate }) => {
   const fetchQuestions = async (url, payload, type = 'questions') => {
     setLoading(true);
     setError('');
-
     try {
       const idTokenClaims = await getIdTokenClaims();
       const idToken = idTokenClaims.__raw;
@@ -84,7 +83,7 @@ export const QuestionsProvider = ({ children, navigate }) => {
   };
 
   return (
-    <QuestionsContext.Provider value={{ questions, setQuestions, testId, setTestId, loading, error, fetchQuestions, resetQuestions }}>
+    <QuestionsContext.Provider value={{ questions, setQuestions, testId, setTestId, loading, error, fetchQuestions, resetQuestions,setLoading }}>
       {children}
     </QuestionsContext.Provider>
   );

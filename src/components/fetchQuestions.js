@@ -16,7 +16,7 @@ export const QuestionsProvider = ({ children }) => {
   const fetchQuestions = async (url, answers) => {
     setLoading(true);
     setError('');
-    
+    console.log("Questions---",url)
     try {
       const idTokenClaims = await getIdTokenClaims();
       const idToken = idTokenClaims.__raw;

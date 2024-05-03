@@ -25,9 +25,20 @@ body, html {
 }
 
 
-.backArrow {
-  font-size:"20px";
+.back-arrow {
+  font-size:20px;
   transition: background-color 0.3s ease;
+  display:flex;
+  flex-direction:column;
+  width:50%;
+  align-items:flex-start;
+}
+
+.game-level-container{
+  display:flex;flex-direction:column;width:50%;align-items:end
+}
+.game-level{
+  display:flex;flex-direction:row;font-weight: bold;
 }
 
 .question-container.disabled * {
@@ -133,7 +144,7 @@ body, html {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 30%;
+  height: 30vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -142,7 +153,13 @@ body, html {
   cursor: pointer;
   box-sizing: border-box; /* To indicate the overlay is clickable */
 }
-
+.overlay-correct{
+  background-color: rgba(80, 210, 0, 0.8);
+}
+.overlay-incorrect {
+  background-color: rgba(216, 0, 0, 0.8)
+  ;
+}
 /* Parallelogram feedback container */
 .feedback-parallelogram {
   position: absolute;
@@ -295,7 +312,7 @@ input::placeholder{
   font-size: 15px;
 }
 .page-container {
-  
+  margin: 0;
 }
 
 /* Tablet and Small Screen  */
@@ -318,9 +335,6 @@ input::placeholder{
   /* Adjustments for when a question has an image */
   .question-container {
     padding: 20px 35% 20px 35%;
-
 }
- 
-
 }
 
