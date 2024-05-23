@@ -5,6 +5,7 @@ const QuestionsContext = createContext();
 
 export const QuestionsProvider = ({ children, navigate }) => {
   const [questions, setQuestions] = useState([]);
+  const [isRegistered, setIsRegistered] = useState(true);
   const [testId, setTestId] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -28,6 +29,7 @@ export const QuestionsProvider = ({ children, navigate }) => {
       });
 
       if (!response.ok) {
+        console.log("response is not ok---")
         const errorMessage = await response.text();
         throw new Error(errorMessage);
       }
@@ -38,7 +40,7 @@ export const QuestionsProvider = ({ children, navigate }) => {
       setTestId(data.test || null);
       return data;
     } catch (error) {
-      console.error("Error fetching questions: ", error);
+      // console.error("Error fetching questions: ", error);
       setError(error.message);
     } finally {
       setLoading(false);
@@ -83,7 +85,7 @@ export const QuestionsProvider = ({ children, navigate }) => {
   };
 
   return (
-    <QuestionsContext.Provider value={{ questions, setQuestions, testId, setTestId, loading, error, fetchQuestions, resetQuestions,setLoading }}>
+    <QuestionsContext.Provider value={{ questions, setQuestions, testId, setTestId, loading, error, fetchQuestions, resetQuestions,setLoading,isRegistered,setIsRegistered}}>
       {children}
     </QuestionsContext.Provider>
   );

@@ -6,16 +6,31 @@
 }
 
 .result-image {
-  width: 100%;
+  width: 80%;
   max-width: 600px; /* Limit the image width while keeping it responsive */
   height: auto; /* Maintain aspect ratio */
 }
 
+/* Header container */
+.header-container-result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.game-level{
+  display:flex;
+  flex-direction:row;
+  font-weight: bold;
+  justify-content: center;
+}
+
 /* Container for the percentage bar */
 .percentage-bar-container {
-  width: 80%;
+  width: 100%;
+  max-width: 600px; /* Limit the image width while keeping it responsive */
+
   margin: 5% auto; /* Center the bar */
-  background-color: #eee;
   height: 5px;
   border-radius: 20px;
   overflow: hidden; /* Ensures the inner bar's excess part is not visible */
@@ -29,4 +44,47 @@
   border-radius: 20px;
   /* Transition for smooth width change */
   transition: width 0.3s ease-in-out;
+  
+}
+
+/* Result font */
+.result-font {
+  color: #5E5E5E;
+  align-self: center;
+  margin: 5px;
+}
+
+/* Result font */
+.title-font {
+  font-size: 20px;
+  font-weight: bold;
+  margin-Top: 30px;
+}
+
+.result-font-container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  padding-top: 0px;
+  margin-bottom: 15px;  
+}
+
+
+
+/* Tablet and Small Screen  */
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+
+}
+
+/* Small Screen  */
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+
+}
+/* Medium */
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+
+}
+/* Large Desktop and above (including 34-inch ultrawide monitors) */
+@media only screen and (min-width: 1921px) {
+
 }

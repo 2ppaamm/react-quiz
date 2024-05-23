@@ -11,12 +11,15 @@ body, html {
 .font-container {
   display: flex;
   align-items: flex-end;
+  width: 100%;
   flex-direction: row;
+  
 }
 .question-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 90vh;
   padding: 20px 10% 20px 10%;
@@ -35,7 +38,10 @@ body, html {
 }
 
 .game-level-container{
-  display:flex;flex-direction:column;width:50%;align-items:end
+  display:flex;
+  flex-direction:column;
+  width:50%;
+  align-items:end;
 }
 .game-level{
   display:flex;flex-direction:row;font-weight: bold;
@@ -141,7 +147,7 @@ body, html {
 /* Overlay styles */
 .overlay {
   position: fixed;
-  bottom: 0;
+  bottom: -22px;
   left: 0;
   width: 100%;
   height: 30vh;
@@ -154,10 +160,10 @@ body, html {
   box-sizing: border-box; /* To indicate the overlay is clickable */
 }
 .overlay-correct{
-  background-color: rgba(80, 210, 0, 0.8);
+  background-color: rgba(80, 210, 0, 0.2);
 }
 .overlay-incorrect {
-  background-color: rgba(216, 0, 0, 0.8)
+  background-color: rgba(216, 0, 0, 0.2)
   ;
 }
 /* Parallelogram feedback container */
@@ -169,11 +175,11 @@ body, html {
   height: 20%;
   background-color: gold;
   display: flex;
+  color: #4CAF50;
   align-items: center; /* Center text vertically */
   justify-content: center; /* Center text horizontally */
-  color: #960000; /* Text color */
-  font-size: 2em; /* Larger text size */
-  clip-path: polygon(3 25%, 100% 10%, 100% 35%, 0 50%); /* Slanted parallelogram shape */
+  font-size: 1.3em; /* Larger text size */
+  text-shadow: 1px 1px 2px #000;
 }
 
 .feedback-icon img {
@@ -181,12 +187,11 @@ body, html {
   height: auto;
   margin-top:10%;
 }
-.feedback-parallelogram span {
-  color: #960000;
-  font-size: 0.7em; 
-  text-shadow: 1px 1px 2px #000;
-}
 
+.feedback-parallelogram.incorrect{
+  color: #960000;
+
+}
 .next-button {
   position: absolute;
   bottom: 10%;
@@ -313,12 +318,16 @@ input::placeholder{
 }
 .page-container {
   margin: 0;
+  position: relative;
 }
 
 /* Tablet and Small Screen  */
 @media only screen and (min-width: 601px) and (max-width: 800px) {
   .question-container {
     padding: 20px 15% 20px 15%;
+}
+.feedback-parallelogram {
+  font-size: 1.7em; /* Larger text size */
 }
 }
 
@@ -329,12 +338,29 @@ input::placeholder{
   .question-container {
     padding: 20px 27% 20px 27%;
 }
+.feedback-parallelogram {
+  font-size: 2em; /* Larger text size */
+}
 }
 /* Medium */
 @media only screen and (min-width: 1025px) and (max-width: 1920px) {
   /* Adjustments for when a question has an image */
   .question-container {
     padding: 20px 35% 20px 35%;
+}
+.feedback-parallelogram {
+  font-size: 2em; /* Larger text size */
+}
+}
+
+/* Large Desktop and above (including 34-inch ultrawide monitors) */
+@media only screen and (min-width: 1921px) {
+  /* Adjustments for when a question has an image */
+  .question-container {
+    padding: 20px 35% 20px 35%;
+}
+.feedback-parallelogram {
+  font-size: 2em; /* Larger text size */
 }
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect,useRef } from 'react';
 import axios from 'axios';
 import DOMPurify from 'dompurify';
 import './QuestionsDisplay.css';
@@ -29,9 +29,11 @@ const QuestionsDisplay = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
   const [answeredCount, setAnsweredCount] = useState(0);
-
-
-
+  const imagePath = `${process.env.PUBLIC_URL}/images/${'kudos.gif'}`; // Construct the path with PUBLIC_URL
+  const questionRef = useRef(null);
+  function pixelToPercentage(pixelValue) {
+    return (pixelValue / window.innerHeight) * 100;
+  }
   useEffect(() => {
     //After five questions before submit go to success page 
     //Result screen show animation
@@ -40,6 +42,7 @@ const QuestionsDisplay = () => {
       const storedUserInfo = localStorage.getItem('userInfo');
       if (storedUserInfo) {
         const userInfo = JSON.parse(storedUserInfo);
+        console.log("user Info ---",userInfo?.game_level)
         if (userInfo && userInfo.game_level !==undefined ){
           setUserInfo(userInfo)
         }
@@ -48,6 +51,7 @@ const QuestionsDisplay = () => {
         console.log('No user info found in localStorage.');
       }
     };
+    
     fetchUserInfo();
     const testType = localStorage.getItem('testType');
     console.log("Test type",testType);
@@ -181,25 +185,34 @@ const QuestionsDisplay = () => {
       };
 
     // Call fetchQuestions with the specific URL for mastercode enrollment
-    try {
-        const data = await fetchQuestions(`${process.env.REACT_APP_BACKEND_URL}/test/answers`, payload, 'answers');
+    //Code has been comment as api contain issue
+    // try {
+    //     const data = await fetchQuestions(`${process.env.REACT_APP_BACKEND_URL}/test/answers`, payload, 'answers');
         
-        if (data.code === 206) {
-           navigate('/results', {state: { resultData:data}});
-        }
-        if (data.code === 203) {
-            navigate('/althomepage');
-        } else if (data.questions && data.questions.length === 0) {
-            navigate('/error', { state: { message: data.message || 'No questions found for this selection.' } });
-        }
+    //     if (data.code === 206) {
+    //        navigate('/results', {state: { resultData:data}});
+    //     }
+    //     if (data.code === 203) {
+    //         navigate('/althomepage');
+    //     } else if (data.questions && data.questions.length === 0) {
+    //         navigate('/error', { state: { message: data.message || 'No questions found for this selection.' } });
+    //     }
 
-        if (data.questions && data.questions.length > 0) {
-          navigate('/questions-display');
-          setActiveQuestionIndex(0);
-        }
-    } catch (error) {
-        navigate('/error', { state: { errorMessage: error.message || 'An error occurred.' } });
-    }
+    //     if (data.questions && data.questions.length > 0) {
+    //       navigate('/questions-display');
+    //       setActiveQuestionIndex(0);
+    //     }
+    // } catch (error) {
+    //     navigate('/error', { state: { errorMessage: error.message || 'An error occurred.' } });
+
+    navigate('/results', {state: { resultData:{
+      kudos:10,
+      percentage:30,
+      name:"Aqib",
+      correct:2,
+      total:5,
+  }}});
+    
   };
 
   const handleGoBack = () => {
@@ -224,12 +237,11 @@ const QuestionsDisplay = () => {
       {/* Status bar */}
       <StatusBar completed={answeredCount} total={5} />
       </div>
-
-    <div className="question-container">
+    <div className={`question-container ${isAnswerCorrect!==null?'disabled':''}`}>
       <div className='primary'>
         Primary 4
       </div>
-      <div className="question-text" >
+      <div className="question-text" ref={questionRef}>
         {activeQuestion?.question && renderKaTex(DOMPurify.sanitize(activeQuestion.question))}
       </div>
       {activeQuestion?.question_image && (
@@ -272,14 +284,24 @@ const QuestionsDisplay = () => {
       )}
 
     {activeQuestion?.type_id === 2 && (
-        <button className="question-submit-button ${isAnswerCorrect!==null? isAnswerCorrect?'correct':'incorrect':''}" onClick={handleFIBSubmit}>
-          Submit
-        </button>
+
+                  <button className={`question-submit-button ${isAnswerCorrect!==null? isAnswerCorrect?'correct':'incorrect':''}`} onClick={handleFIBSubmit}>
+                  <span className="button-text">{isAnswerCorrect!==null? isAnswerCorrect?"Correct":"Incorrect" :"Submit"} </span>
+                  <span className="icon-right"> {isAnswerCorrect!==null&&(isAnswerCorrect ?<FontAwesomeIcon icon={faCheckCircle}/>:<FontAwesomeIcon icon={faXmarkCircle}  />)}
+               </span>
+                 </button>
       )}
       </div>
       {/* Overlay */}
       {
-       isAnswerCorrect!==null&&(<div onClick={handleOverlay} className={`overlay ${isAnswerCorrect!==null? isAnswerCorrect?'overlay-correct':'overlay-incorrect':''}`}></div>)
+       isAnswerCorrect!==null&&(<div onClick={handleOverlay} 
+       className={`overlay ${isAnswerCorrect!==null? isAnswerCorrect?'overlay-correct':'overlay-incorrect':''}`}
+       style={{height:`${Math.floor(pixelToPercentage(questionRef.current.offsetHeight+questionRef.current.offsetTop))>40?50:30}%`}}
+       >
+        <div className= {`feedback-parallelogram text ${isAnswerCorrect?'':'incorrect'}`}>
+        { isAnswerCorrect?'2 Kudos for a Great job!':'Incorrect, 1 kudo for trying 🙂'}
+        </div>
+       </div>)
       }
       </div>
   );
