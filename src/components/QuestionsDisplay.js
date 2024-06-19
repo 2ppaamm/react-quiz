@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect,useRef } from 'react';
 import axios from 'axios';
 import DOMPurify from 'dompurify';
 import './QuestionsDisplay.css';
@@ -7,25 +7,54 @@ import 'katex/dist/katex.min.css';
 import { useQuestions } from './QuestionsContext';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee,faAngleLeft, faCheckCircle, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
+import StatusBar from './StatusBar';
 import parse from 'html-react-parser';
 import Confetti from 'react-confetti';
+import { ReactComponent as GameLevel } from '../game_level.svg';
+
 
 const QuestionsDisplay = () => {
-  const { fetchQuestions } = useQuestions();
+  const { fetchQuestions,loading,setLoading } = useQuestions();
   const { questions, testId, setQuestions, setTestId } = useQuestions();
   const { getIdTokenClaims } = useAuth0();
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
-  const [showOverlay, setShowOverlay] = useState(false);
   const navigate = useNavigate();
   const baseUrl = `${process.env.REACT_APP_BACKEND_URL}`;
   const activeQuestion = questions[activeQuestionIndex];
   const [showVideoPopup, setShowVideoPopup] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
-
+  const [userInfo, setUserInfo] = useState(null);
+  const [answeredCount, setAnsweredCount] = useState(0);
+  const imagePath = `${process.env.PUBLIC_URL}/images/${'kudos.gif'}`; // Construct the path with PUBLIC_URL
+  const questionRef = useRef(null);
+  function pixelToPercentage(pixelValue) {
+    return (pixelValue / window.innerHeight) * 100;
+  }
   useEffect(() => {
+    //After five questions before submit go to success page 
+    //Result screen show animation
+    const fetchUserInfo = () => {
+      // Attempt to retrieve user info from localStorage
+      const storedUserInfo = localStorage.getItem('userInfo');
+      if (storedUserInfo) {
+        const userInfo = JSON.parse(storedUserInfo);
+        console.log("user Info ---",userInfo?.game_level)
+        if (userInfo && userInfo.game_level !==undefined ){
+          setUserInfo(userInfo)
+        }
+      } else {
+        // Optionally, handle the case where no user info is found in localStorage
+        console.log('No user info found in localStorage.');
+      }
+    };
+    
+    fetchUserInfo();
     const testType = localStorage.getItem('testType');
+    console.log("Test type",testType);
     if (testType === 'subjectSelect' && activeQuestion?.skills?.lesson_link) {
       setShowVideoPopup(true);
     } else {
@@ -40,8 +69,22 @@ const QuestionsDisplay = () => {
     }
   };
 
+  const handleOverlay = () => {
+    if(isAnswerCorrect)
+    {
+      goToNextQuestion()
+    }
+    else
+    {
+      goToNextQuestion()
+      setIsAnswerCorrect(null)
+    }
+    setAnsweredCount(count=>++count)
+    };
+
+
   useEffect(() => {
-    if (activeQuestion.type_id === 2) {
+    if (activeQuestion?.type_id === 2) {
       // Clear inputs and set placeholders if the current question is of type 2
       const inputs = document.querySelectorAll('.lineinput');
       inputs.forEach(input => {
@@ -83,7 +126,6 @@ const QuestionsDisplay = () => {
       const correct = parseInt(questions[activeQuestionIndex].correct_answer) === selectedOption;
       setIsAnswerCorrect(correct);
       setUserAnswers(prevAnswers => [...prevAnswers, { question_id: questions[activeQuestionIndex].id, answer: selectedOption }]);
-      setShowOverlay(true); // Show feedback
       setSelectedOption(null); // Reset selection
     }
   };
@@ -108,15 +150,13 @@ const QuestionsDisplay = () => {
 
       setIsAnswerCorrect(allAnswersCorrect); // Update the state based on the correctness of all answers
       setUserAnswers(prevAnswers => [...prevAnswers, { question_id: activeQuestion.id, answer: fibAnswers }]);
-      setShowOverlay(true); // Optionally, show overlay for feedback or moving to the next question
   };
 
   const goToNextQuestion = () => {
-    setShowOverlay(false);
-    if (activeQuestionIndex < questions.length - 1) {
+    if (activeQuestionIndex < 4) {
     // Not the last question, so move to the next question
     setActiveQuestionIndex(currentIndex => currentIndex + 1);
-      if (activeQuestion.type_id === 2) {
+      if (activeQuestion?.type_id === 2) {
         // Clear inputs and set placeholders if the current question is of type 2
         const inputs = document.querySelectorAll('.lineinput');
         inputs.forEach(input => {
@@ -136,6 +176,8 @@ const QuestionsDisplay = () => {
 
   const submitAnswers = async (event) => {
     // Prepare the payload for submitting answers
+    setLoading(true)
+    console.log("User Answers ---",userAnswers);
     const payload = {
         test: testId,
         question_id: userAnswers.map(a => a.question_id),
@@ -143,45 +185,74 @@ const QuestionsDisplay = () => {
       };
 
     // Call fetchQuestions with the specific URL for mastercode enrollment
-    try {
-        const data = await fetchQuestions(`${process.env.REACT_APP_BACKEND_URL}/test/answers`, payload, 'answers');
+    //Code has been comment as api contain issue
+    // try {
+    //     const data = await fetchQuestions(`${process.env.REACT_APP_BACKEND_URL}/test/answers`, payload, 'answers');
         
-        if (data.code === 206) {
-           navigate('/results', {state: { resultData:data}});
-        }
-        if (data.code === 203) {
-            navigate('/althomepage');
-        } else if (data.questions && data.questions.length === 0) {
-            navigate('/error', { state: { message: data.message || 'No questions found for this selection.' } });
-        }
+    //     if (data.code === 206) {
+    //        navigate('/results', {state: { resultData:data}});
+    //     }
+    //     if (data.code === 203) {
+    //         navigate('/althomepage');
+    //     } else if (data.questions && data.questions.length === 0) {
+    //         navigate('/error', { state: { message: data.message || 'No questions found for this selection.' } });
+    //     }
 
-        if (data.questions && data.questions.length > 0) {
-          navigate('/questions-display');
-          setActiveQuestionIndex(0);
-        }
-    } catch (error) {
-        navigate('/error', { state: { errorMessage: error.message || 'An error occurred.' } });
-    }
+    //     if (data.questions && data.questions.length > 0) {
+    //       navigate('/questions-display');
+    //       setActiveQuestionIndex(0);
+    //     }
+    // } catch (error) {
+    //     navigate('/error', { state: { errorMessage: error.message || 'An error occurred.' } });
+
+    navigate('/results', {state: { resultData:{
+      kudos:10,
+      percentage:30,
+      name:"Aqib",
+      correct:2,
+      total:5,
+  }}});
+    
   };
 
+  const handleGoBack = () => {
+    navigate('/'); // Navigates to the root page
+  };
+
+  if(loading)
   return (
-    <div className="question-container">
-    <div className={showOverlay ? 'disabled-questions' : ''}>
-      <div className="question-text">
+    <div style={{display:'flex',alignItems:"flex-start"}}>
+    <p>Loading...</p>
+    </div>
+  )
+
+  return (
+    <div className='page-container'>
+      {/* Header */}
+      <div className='header-container'>
+      <div className='font-container'>
+        <span className='back-arrow'><FontAwesomeIcon icon={faAngleLeft} onClick={handleGoBack} className="backArrow"/></span>
+        <span className='game-level-container'> <div className='game-level'><GameLevel width={20} height={20} style={{paddingRight:8}}/>{userInfo?.game_level}</div></span>
+      </div>
+      {/* Status bar */}
+      <StatusBar completed={answeredCount} total={5} />
+      </div>
+    <div className={`question-container ${isAnswerCorrect!==null?'disabled':''}`}>
+      <div className='primary'>
+        Primary 4
+      </div>
+      <div className="question-text" ref={questionRef}>
         {activeQuestion?.question && renderKaTex(DOMPurify.sanitize(activeQuestion.question))}
       </div>
       {activeQuestion?.question_image && (
-        <div className="question-image-container">
           <img src={`${baseUrl}${activeQuestion.question_image}`} alt="Question" className="question-image" />
-        </div>
       )}
-      {activeQuestion.skill && activeQuestion.skill.lesson_link && (
+      {activeQuestion?.skill && activeQuestion.skill.lesson_link && (
         <div className="watch-video-link" onClick={handleWatchVideo}>
           Watch Video <i className="fas fa-video watch-video-icon"></i>
         </div>
       )}
-
-      {activeQuestion.type_id === 1 && (
+      {activeQuestion?.type_id === 1 && (
         <div className="answer-options-container">
           { [...Array(4)].map((_, index) => {
               const answerText = activeQuestion[`answer${index}`];
@@ -204,52 +275,35 @@ const QuestionsDisplay = () => {
               return null;
             })
           }
-          <button className="question-submit-button" onClick={handleSubmitMCQ}>
-            Submit
+          <button className={`question-submit-button ${isAnswerCorrect!==null? isAnswerCorrect?'correct':'incorrect':''}`} onClick={handleSubmitMCQ}>
+           <span className="button-text">{isAnswerCorrect!==null? isAnswerCorrect?"Correct":"Incorrect" :"Submit"} </span>
+           <span className="icon-right"> {isAnswerCorrect!==null&&(isAnswerCorrect ?<FontAwesomeIcon icon={faCheckCircle}/>:<FontAwesomeIcon icon={faXmarkCircle}  />)}
+        </span>
           </button>
         </div>
       )}
 
-    {activeQuestion.type_id === 2 && (
-        <button className="question-submit-button" onClick={handleFIBSubmit}>
-          Submit
-        </button>
+    {activeQuestion?.type_id === 2 && (
+
+                  <button className={`question-submit-button ${isAnswerCorrect!==null? isAnswerCorrect?'correct':'incorrect':''}`} onClick={handleFIBSubmit}>
+                  <span className="button-text">{isAnswerCorrect!==null? isAnswerCorrect?"Correct":"Incorrect" :"Submit"} </span>
+                  <span className="icon-right"> {isAnswerCorrect!==null&&(isAnswerCorrect ?<FontAwesomeIcon icon={faCheckCircle}/>:<FontAwesomeIcon icon={faXmarkCircle}  />)}
+               </span>
+                 </button>
       )}
       </div>
-      {showOverlay && (
-        <div className="overlay" onClick={goToNextQuestion}>
-          {isAnswerCorrect && <Confetti width={window.width} height={window.height} />}
-          <div className="feedback-parallelogram">
-            {isAnswerCorrect ? (
-              <>
-                <span>
-                  {(() => {
-                    switch (activeQuestion.difficulty_id + 1) {
-                      case 2:
-                        return "2 kudos for a Great job!";
-                      case 3:
-                        return "Awesome! You earned 3 kudos!";
-                      case 4:
-                        return "Incredible! You added 4 kudos!";
-                      default:
-                        return "Woohoo!";
-                    }
-                  })()}
-                </span>
-              </>
-            ) : (
-              <span>Incorrect... 1 kudo for trying. 🙂</span>
-            )}
-          </div>
-          <div className="feedback-icon">
-            {Array(isAnswerCorrect ? activeQuestion.difficulty_id + 1 : 1).fill().map((_, i) => (
-              <img id="coin" key={i} src={`${process.env.PUBLIC_URL}/images/kudos.png`} alt="Kudos" />
-            ))}
-          </div>
-          {/*<button className="next-button">Next</button>*/}
+      {/* Overlay */}
+      {
+       isAnswerCorrect!==null&&(<div onClick={handleOverlay} 
+       className={`overlay ${isAnswerCorrect!==null? isAnswerCorrect?'overlay-correct':'overlay-incorrect':''}`}
+       style={{height:`${Math.floor(pixelToPercentage(questionRef.current.offsetHeight+questionRef.current.offsetTop))>40?50:30}%`}}
+       >
+        <div className= {`feedback-parallelogram text ${isAnswerCorrect?'':'incorrect'}`}>
+        { isAnswerCorrect?'2 Kudos for a Great job!':'Incorrect, 1 kudo for trying 🙂'}
         </div>
-      )}
-    </div>
+       </div>)
+      }
+      </div>
   );
 };
 export default QuestionsDisplay;

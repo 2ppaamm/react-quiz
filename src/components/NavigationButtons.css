@@ -17,17 +17,23 @@ body {
 }
 
 /* Styles for the buttons */
-.action-button {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24.38px;
+.action-button-nav {
+  border: none;
+  color: white;
+  padding: 05px;
   text-align: center;
-  width: 302px;
-  height: 60px;
-  padding: 15px 0;
-  border-radius: 8px;
-  opacity: 1; /* Assuming you want the buttons fully opaque, change '0' to '1' */
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 80%; /* Adjust based on preference */
+  max-width: 300px; /* Ensures buttons are not too wide on larger screens */
 }
+
+
+
 
 /* Additional styles for button backgrounds, defined in JavaScript */
 .continue {
@@ -43,4 +49,30 @@ body {
 .subjectSelect {
   background-color: #FFC0AC;
   color: black; /* Black text for the Subject Select button */
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+ .action-button-nav {
+
+  background-color: red;
+ }
+}
+
+/* Small Screen  */
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  .action-button-nav{
+
+   }
+}
+/* Medium */
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+  .action-button-nav{
+
+   }
+}
+/* Large Desktop and above (including 34-inch ultrawide monitors) */
+@media only screen and (min-width: 1921px) {
+  .action-button-nav{
+
+   }
 }

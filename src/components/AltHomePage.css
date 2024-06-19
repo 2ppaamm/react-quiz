@@ -1,35 +1,10 @@
-.alt-home-container {
-  text-align: center;
-  padding: 20px;
-}
-
-.alternative-welcome-image {
+.name-text-container {
   max-width: 100%;
-  height: auto;
+  margin-top: 20px;
 }
 
-.options-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* Adjust the space between buttons */
-}
-
-.action-button {
-  cursor: pointer;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: white;
-  background-color: #4CAF50; /* Example background color */
-  transition: background-color 0.3s ease;
-
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24.38px;
-  text-align: center;
-
+.alt-home-container {
+  margin-top: 20px;
 }
 
 .action-button:hover {
@@ -45,3 +20,201 @@
   color: black;
 }
 
+
+/* Mobile Styles */
+@media only screen and (max-width: 480px) {
+
+  .alternative-welcome-image {
+    max-width: 100%;
+    border-radius: 8px;
+    height: auto;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adjust the space between buttons */
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    max-width: 100%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+
+  .alternative-welcome-image {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the space between buttons */
+    padding-right: 40px;
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  
+  }
+  
+}
+
+
+/* Tablet and Small Screen  */
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+
+  .alternative-welcome-image {
+    width: 75%;
+    border-radius: 8px;
+    height: auto;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the space between buttons */
+    align-items: center;
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 70%;
+    max-width: 70%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  
+  }
+}
+
+
+/* Small Screen  */
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+
+  .alternative-welcome-image {
+    width: 75%;
+    border-radius: 8px;
+    height: auto;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the space between buttons */
+    align-items: center;
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 70%;
+    max-width: 70%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  
+  }
+  
+}
+
+/* Medium */
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+
+  .alternative-welcome-image {
+    width: 30%;
+    border-radius: 8px;
+    height: auto;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adjust the space between buttons */
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 30%;
+    max-width: 30%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  
+  }
+
+}
+
+
+
+/* Large Desktop and above (including 34-inch ultrawide monitors) */
+@media only screen and (min-width: 1921px) {
+
+  .alternative-welcome-image {
+    width: 30%;
+    border-radius: 8px;
+    height: auto;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adjust the space between buttons */
+  }
+  .action-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 30%;
+    max-width: 30%;
+    color: white;
+    background-color: #4CAF50; /* Example background color */
+    transition: background-color 0.3s ease;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  
+  }
+}

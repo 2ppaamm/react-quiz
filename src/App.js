@@ -14,12 +14,17 @@ import ResultsPage from './components/ResultsPage';
 import { QuestionsProvider } from './components/QuestionsContext';
 import { fetchUserInfo } from './components/fetchUserInfo';
 import ErrorPage from './components/ErrorPage';
+import { useQuestions } from './components/QuestionsContext';
 
-function App() {
+
+function Root()
+{
+  const { isRegistered,setIsRegistered} = useQuestions();
   const { isAuthenticated, isLoading, loginWithRedirect, getIdTokenClaims, getAccessTokenSilently } = useAuth0();
   const [userInfo, setUserInfo] = useState(null);
-  const [isRegistered, setIsRegistered] = useState(true);
+
   useEffect(() => {
+    console.log("Navigation---")
     const testType = localStorage.getItem('testType');
     if (!testType) {
       localStorage.setItem('testType', 'non-video');
@@ -30,6 +35,7 @@ function App() {
         getIdTokenClaims().then(claims => {
           const idToken = claims.__raw;
           fetchUserInfo(idToken).then(({ isRegistered, userInfo }) => {
+            console.log("Is Registered ---",isRegistered)
             if (isRegistered) {
               setUserInfo(userInfo);
             }
@@ -47,26 +53,38 @@ function App() {
     }
   }, [isLoading, isAuthenticated, getIdTokenClaims, getAccessTokenSilently, loginWithRedirect]);
 
+  useEffect(()=>{
+    console.log("isRegistered---",isRegistered)
+  },[isRegistered])
+
+  return (
+    <div className={`App ${isAuthenticated ? 'authenticated' : ''}`}>
+    {!isLoading && isAuthenticated ? (
+      <Routes>
+        <Route path="/" element={isRegistered ? <HomePage userInfo={userInfo} /> : <AltHomePage />} />
+        <Route path="/mastercode-enrollment" element={<MastercodeEnrollment />} />
+        <Route path="/purchase-enrollment" element={<PurchaseEnrollment />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/error" element={<ErrorPage />} />
+        <Route path="/subject-select" element={<SubjectSelection />} />
+        <Route path="/questions-display" element={<QuestionsDisplay />} /> 
+        <Route path="/results" element={<ResultsPage />} />
+      </Routes>
+    ) : (
+      <p>Loading or not authenticated...</p>
+    )}
+    <AuthenticationButtons />
+  </div>
+  )
+}
+
+
+function App() {
+
   return (
     <QuestionsProvider>
       <Router>
-        <div className={`App ${isAuthenticated ? 'authenticated' : ''}`}>
-          {!isLoading && isAuthenticated ? (
-            <Routes>
-              <Route path="/" element={isRegistered ? <HomePage userInfo={userInfo} /> : <AltHomePage />} />
-              <Route path="/mastercode-enrollment" element={<MastercodeEnrollment />} />
-              <Route path="/purchase-enrollment" element={<PurchaseEnrollment />} />
-              <Route path="/menu" element={<MenuPage />} />
-              <Route path="/error" element={<ErrorPage />} />
-              <Route path="/subject-select" element={<SubjectSelection />} />
-              <Route path="/questions-display" element={<QuestionsDisplay />} /> 
-              <Route path="/results" element={<ResultsPage />} />
-            </Routes>
-          ) : (
-            <p>Loading or not authenticated...</p>
-          )}
-          <AuthenticationButtons />
-        </div>
+        <Root />
       </Router>
     </QuestionsProvider>
   );

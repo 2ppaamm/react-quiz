@@ -9,7 +9,7 @@ const MastercodeEnrollment = () => {
   const [lastName, setLastName] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
   const navigate = useNavigate();
-  const { fetchQuestions } = useQuestions(); // Use the useQuestions hook to access fetchQuestions
+  const { fetchQuestions, setIsRegistered } = useQuestions(); // Use the useQuestions hook to access fetchQuestions
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,11 +24,11 @@ const MastercodeEnrollment = () => {
 
     // Call fetchQuestions with the specific URL for mastercode enrollment
     try {
-      await fetchQuestions(`${process.env.REACT_APP_BACKEND_URL}/mastercode`, payload, 'enrollment');
-         navigate('/questions-display');
+      let data=await fetchQuestions(`${process.env.REACT_APP_BACKEND_URL}/mastercode`, payload, 'enrollment');
+      console.log("data----",data)
       } catch (error) {
       // Handle any errors
-      console.error('Error during mastercode enrollment:', error);
+      // console.error('Error during mastercode enrollment:', error);
       navigate('/error', { state: { errorMessage: error.message || 'An error occurred during enrollment.' } });
     }
   };

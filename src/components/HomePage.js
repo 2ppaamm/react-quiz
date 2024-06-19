@@ -1,11 +1,12 @@
 import React from 'react';
 import NavigationButtons from './NavigationButtons';
+import './AltHomePage.css';
 
 const HomePage = ({ userInfo }) => {
   return (
-    <div>
+    <div className="alt-home-container">
       <img
-        className="welcome-image"
+        className="alternative-welcome-image"
         src={`${process.env.PUBLIC_URL}/images/welcome.png`}
         alt="Welcome"
       />

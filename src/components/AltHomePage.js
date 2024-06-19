@@ -7,7 +7,7 @@ import './AltHomePage.css';
 const AltHomePage = () => {
   const { user } = useAuth0(); // Destructure user from useAuth0 hook
   const [isLoading, setIsLoading] = useState(false);
-  const { getIdTokenClaims } = useAuth0();
+  const { getIdTokenClaims,logout } = useAuth0();
   const navigate = useNavigate();
   const { fetchQuestions } = useQuestions();
 
@@ -20,6 +20,7 @@ const AltHomePage = () => {
       await fetchQuestions(diagnosticURL, {});
       // Assuming fetchQuestions navigates to '/questions-display' upon success,
       navigate('/questions-display');
+
       // and you have error handling within fetchQuestions to navigate to '/error' on failure.
     } catch (error) {
       console.error('Error during diagnostic test:', error);
@@ -30,7 +31,8 @@ const AltHomePage = () => {
   };
   
   const handleMastercodeEnrollment = () => {
-      navigate('/mastercode-enrollment');
+      // navigate('/mastercode-enrollment');
+     logout({ returnTo: window.location.origin })
   };
 
 
@@ -45,7 +47,7 @@ const AltHomePage = () => {
         src={`${process.env.PUBLIC_URL}/images/welcome.png`}
         alt="Welcome, Adventurer!"
       />
-      <h3>Hello, <strong>{user?.name || "Fellow Adventurer"}</strong>!</h3>
+      <div className='name-text-container'>Hello, <strong>{user?.name || "Fellow Adventurer"}</strong>!</div>
       <p>Start My journey</p>
       <div className="options-container">
         <div className="action-button" onClick={handleDiagnosticTest}>
