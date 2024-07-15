@@ -11,76 +11,54 @@ import QuestionsDisplay from './components/QuestionsDisplay';
 import MastercodeEnrollment from './components/MastercodeEnrollment';
 import PurchaseEnrollment from './components/PurchaseEnrollment';
 import ResultsPage from './components/ResultsPage';
-import { QuestionsProvider } from './components/QuestionsContext';
-import { fetchUserInfo } from './components/fetchUserInfo';
 import ErrorPage from './components/ErrorPage';
+import useAccessToken from './components/useAccessToken';  // Make sure this path is correct
+import { QuestionsProvider } from './components/QuestionsContext';
 import { useQuestions } from './components/QuestionsContext';
+import { fetchUserInfo } from './components/fetchUserInfo';
 
-
-function Root()
-{
-  const { isRegistered,setIsRegistered} = useQuestions();
-  const { isAuthenticated, isLoading, loginWithRedirect, getIdTokenClaims, getAccessTokenSilently } = useAuth0();
+function Root() {
+  const { isRegistered, setIsRegistered } = useQuestions();
+  const { isAuthenticated, isLoading } = useAuth0();
+  const accessToken = useAccessToken();  // Using the custom hook
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
-    console.log("Navigation---")
-    const testType = localStorage.getItem('testType');
-    if (!testType) {
-      localStorage.setItem('testType', 'non-video');
-    }
-
-    if (!isLoading && isAuthenticated) {
-      getAccessTokenSilently().then(() => {
-        getIdTokenClaims().then(claims => {
-          const idToken = claims.__raw;
-          fetchUserInfo(idToken).then(({ isRegistered, userInfo }) => {
-            console.log("Is Registered ---",isRegistered)
-            if (isRegistered) {
-              setUserInfo(userInfo);
-            }
-            // Update the state based on registration status
-            setIsRegistered(isRegistered);
-          }).catch(err => {
-            console.error("Error processing user info:", err);
-            // Handle error, potentially setting isRegistered to false or showing an error message
-          });
-        });
-      }).catch(error => {
-        console.error('Authentication error:', error);
-        loginWithRedirect();
+    if (!isLoading && isAuthenticated && accessToken) {
+      fetchUserInfo(accessToken).then(({ isRegistered, userInfo }) => {
+        if (isRegistered) {
+          setUserInfo(userInfo);
+          console.log(userInfo);
+          setIsRegistered(isRegistered);
+        }
+      }).catch(err => {
+        console.error("Error processing user info:", err);
       });
     }
-  }, [isLoading, isAuthenticated, getIdTokenClaims, getAccessTokenSilently, loginWithRedirect]);
-
-  useEffect(()=>{
-    console.log("isRegistered---",isRegistered)
-  },[isRegistered])
+  }, [isLoading, isAuthenticated, accessToken, setIsRegistered]);
 
   return (
     <div className={`App ${isAuthenticated ? 'authenticated' : ''}`}>
-    {!isLoading && isAuthenticated ? (
-      <Routes>
-        <Route path="/" element={isRegistered ? <HomePage userInfo={userInfo} /> : <AltHomePage />} />
-        <Route path="/mastercode-enrollment" element={<MastercodeEnrollment />} />
-        <Route path="/purchase-enrollment" element={<PurchaseEnrollment />} />
-        <Route path="/menu" element={<MenuPage />} />
-        <Route path="/error" element={<ErrorPage />} />
-        <Route path="/subject-select" element={<SubjectSelection />} />
-        <Route path="/questions-display" element={<QuestionsDisplay />} /> 
-        <Route path="/results" element={<ResultsPage />} />
-      </Routes>
-    ) : (
-      <p>Loading or not authenticated...</p>
-    )}
-    <AuthenticationButtons />
-  </div>
-  )
+      {!isLoading && isAuthenticated ? (
+        <Routes>
+          <Route path="/" element={isRegistered ? <HomePage userInfo={userInfo} /> : <AltHomePage />} />
+          <Route path="/mastercode-enrollment" element={<MastercodeEnrollment />} />
+          <Route path="/purchase-enrollment" element={<PurchaseEnrollment />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="/subject-select" element={<SubjectSelection />} />
+          <Route path="/questions-display" element={<QuestionsDisplay />} />
+          <Route path="/results" element={<ResultsPage />} />
+        </Routes>
+      ) : (
+        <p>Loading or not authenticated...</p>
+      )}
+      <AuthenticationButtons />
+    </div>
+  );
 }
 
-
 function App() {
-
   return (
     <QuestionsProvider>
       <Router>
