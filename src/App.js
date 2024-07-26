@@ -35,7 +35,6 @@ function Root()
         getIdTokenClaims().then(claims => {
           const idToken = claims.__raw;
           fetchUserInfo(idToken).then(({ isRegistered, userInfo }) => {
-            console.log("Is Registered ---",isRegistered)
             if (isRegistered) {
               setUserInfo(userInfo);
             }
