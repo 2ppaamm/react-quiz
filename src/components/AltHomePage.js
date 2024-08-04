@@ -31,8 +31,8 @@ const AltHomePage = () => {
   };
   
   const handleMastercodeEnrollment = () => {
-      // navigate('/mastercode-enrollment');
-     logout({ returnTo: window.location.origin })
+      navigate('/mastercode-enrollment');
+    //  logout({ returnTo: window.location.origin })
   };
 
 

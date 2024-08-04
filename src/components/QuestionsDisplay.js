@@ -50,6 +50,8 @@ const QuestionsDisplay = () => {
         // Optionally, handle the case where no user info is found in localStorage
         console.log('No user info found in localStorage.');
       }
+      console.log(questions)
+
     };
     
     fetchUserInfo();
@@ -149,6 +151,7 @@ const QuestionsDisplay = () => {
       }
 
       setIsAnswerCorrect(allAnswersCorrect); // Update the state based on the correctness of all answers
+      console.log('All answers ---',allAnswersCorrect)
       setUserAnswers(prevAnswers => [...prevAnswers, { question_id: activeQuestion.id, answer: fibAnswers }]);
   };
 
@@ -204,6 +207,7 @@ const QuestionsDisplay = () => {
     //     }
     // } catch (error) {
     //     navigate('/error', { state: { errorMessage: error.message || 'An error occurred.' } });
+      //     }
 
     navigate('/results', {state: { resultData:{
       kudos:10,

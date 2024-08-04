@@ -1,28 +1,29 @@
 import React, { createContext, useContext, useState } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
+import useAccessToken from './useAccessToken'; // Ensure the correct path
 
 const QuestionsContext = createContext();
 
 export const QuestionsProvider = ({ children, navigate }) => {
   const [questions, setQuestions] = useState([]);
-  const [isRegistered, setIsRegistered] = useState(true);
+  const [isRegistered, setIsRegistered] = useState(false);
   const [testId, setTestId] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const accessToken = useAccessToken();
 
-  const { getIdTokenClaims } = useAuth0();
 
   const fetchQuestions = async (url, payload, type = 'questions') => {
     setLoading(true);
     setError('');
     try {
-      const idTokenClaims = await getIdTokenClaims();
-      const idToken = idTokenClaims.__raw;
+      if (!accessToken) {
+        throw new Error("Access token not available");
+      }
       const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${idToken}`,
+          Authorization: `Bearer ${accessToken}`,
         },
         // Payload could be answers for questions or data for mastercode enrollment
         body: JSON.stringify(payload),
@@ -33,9 +34,7 @@ export const QuestionsProvider = ({ children, navigate }) => {
         const errorMessage = await response.text();
         throw new Error(errorMessage);
       }
-
       const data = await response.json();
-
       setQuestions(data.questions || []);
       setTestId(data.test || null);
       return data;

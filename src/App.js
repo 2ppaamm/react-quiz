@@ -15,26 +15,23 @@ import { QuestionsProvider } from './components/QuestionsContext';
 import { fetchUserInfo } from './components/fetchUserInfo';
 import ErrorPage from './components/ErrorPage';
 import { useQuestions } from './components/QuestionsContext';
-
-
+import useAccessToken from './components/useAccessToken.js';
 function Root()
 {
   const { isRegistered,setIsRegistered} = useQuestions();
+  const accessToken = useAccessToken();  
   const { isAuthenticated, isLoading, loginWithRedirect, getIdTokenClaims, getAccessTokenSilently } = useAuth0();
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
-    console.log("Navigation---")
     const testType = localStorage.getItem('testType');
     if (!testType) {
       localStorage.setItem('testType', 'non-video');
     }
+    console.log("AccessToken---",accessToken)
 
-    if (!isLoading && isAuthenticated) {
-      getAccessTokenSilently().then(() => {
-        getIdTokenClaims().then(claims => {
-          const idToken = claims.__raw;
-          fetchUserInfo(idToken).then(({ isRegistered, userInfo }) => {
+    if (!isLoading && isAuthenticated && accessToken) {
+          fetchUserInfo(accessToken).then(({ isRegistered, userInfo }) => {
             if (isRegistered) {
               setUserInfo(userInfo);
             }
@@ -44,13 +41,9 @@ function Root()
             console.error("Error processing user info:", err);
             // Handle error, potentially setting isRegistered to false or showing an error message
           });
-        });
-      }).catch(error => {
-        console.error('Authentication error:', error);
-        loginWithRedirect();
-      });
+
     }
-  }, [isLoading, isAuthenticated, getIdTokenClaims, getAccessTokenSilently, loginWithRedirect]);
+  }, [isLoading, isAuthenticated, accessToken]);
 
   useEffect(()=>{
     console.log("isRegistered---",isRegistered)
