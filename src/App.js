@@ -15,27 +15,40 @@ import ErrorPage from './components/ErrorPage';
 import useAccessToken from './components/useAccessToken';  // Make sure this path is correct
 import { QuestionsProvider } from './components/QuestionsContext';
 import { useQuestions } from './components/QuestionsContext';
-import { fetchUserInfo } from './components/fetchUserInfo';
 
-function Root() {
-  const { isRegistered, setIsRegistered } = useQuestions();
-  const { isAuthenticated, isLoading } = useAuth0();
-  const accessToken = useAccessToken();  // Using the custom hook
+import useAccessToken from './components/useAccessToken.js';
+function Root()
+{
+  const { isRegistered,setIsRegistered} = useQuestions();
+  const accessToken = useAccessToken();  
+  const { isAuthenticated, isLoading, loginWithRedirect, getIdTokenClaims, getAccessTokenSilently } = useAuth0();
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
-    if (!isLoading && isAuthenticated && accessToken) {
-      fetchUserInfo(accessToken).then(({ isRegistered, userInfo }) => {
-        if (isRegistered) {
-          setUserInfo(userInfo);
-          console.log(userInfo);
-          setIsRegistered(isRegistered);
-        }
-      }).catch(err => {
-        console.error("Error processing user info:", err);
-      });
+    const testType = localStorage.getItem('testType');
+    if (!testType) {
+      localStorage.setItem('testType', 'non-video');
     }
-  }, [isLoading, isAuthenticated, accessToken, setIsRegistered]);
+    console.log("AccessToken---",accessToken)
+
+    if (!isLoading && isAuthenticated && accessToken) {
+          fetchUserInfo(accessToken).then(({ isRegistered, userInfo }) => {
+            if (isRegistered) {
+              setUserInfo(userInfo);
+            }
+            // Update the state based on registration status
+            setIsRegistered(isRegistered);
+          }).catch(err => {
+            console.error("Error processing user info:", err);
+            // Handle error, potentially setting isRegistered to false or showing an error message
+          });
+
+    }
+  }, [isLoading, isAuthenticated, accessToken]);
+
+  useEffect(()=>{
+    console.log("isRegistered---",isRegistered)
+  },[isRegistered])
 
   return (
     <div className={`App ${isAuthenticated ? 'authenticated' : ''}`}>

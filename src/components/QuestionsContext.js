@@ -5,11 +5,10 @@ const QuestionsContext = createContext();
 
 export const QuestionsProvider = ({ children }) => {
   const [questions, setQuestions] = useState([]);
-  const [isRegistered, setIsRegistered] = useState(true);
+  const [isRegistered, setIsRegistered] = useState(false);
   const [testId, setTestId] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
   const accessToken = useAccessToken();
 
   const fetchQuestions = async (url, payload, type = 'questions') => {
@@ -19,7 +18,6 @@ export const QuestionsProvider = ({ children }) => {
       if (!accessToken) {
         throw new Error("Access token not available");
       }
-
       const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -33,7 +31,6 @@ export const QuestionsProvider = ({ children }) => {
         const errorMessage = await response.text();
         throw new Error(errorMessage);
       }
-
       const data = await response.json();
       setQuestions(data.questions || []);
       setTestId(data.test || null);

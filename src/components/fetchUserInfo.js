@@ -1,27 +1,25 @@
-export const fetchUserInfo = async (accessToken) => {
-    const baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
-    const endpoint = '/loginInfo';
+import storage from './storage';
 
-    try {
-        console.log('AccessToken:', accessToken);
-        const response = await fetch(`${baseURL}${endpoint}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${accessToken}`
-            },
-            body: JSON.stringify({})
-        });
+const baseURL = `${process.env.REACT_APP_BACKEND_URL}`;
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+export const fetchUserInfo = async (idToken) => {
+  console.log(idToken)
+  try {
+    const response = await fetch(`${baseURL}/loginInfo`,{
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${idToken}`,
+        'Content-Type': 'application/json',
+      },
+    });
 
-        const data = await response.json();
-        console.log('Fetched User Info:', data);
-        return data; // Ensure this includes { isRegistered, user }
-    } catch (error) {
-        console.error('Error fetching user info:', error);
-        throw error;
+    const responseData = await response.json();
+    const user = JSON.stringify(responseData.user);
+    localStorage.setItem('userInfo', user);
+    console.log("Response---",responseData)
+    if (responseData.code === 203) {
+      // When code=203, we understand there's no user info because the user is not registered.
+      console.log("Status code ", 203)
+      return { isRegistered: false, userInfo: null };
     }
 };
