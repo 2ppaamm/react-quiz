@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 const useAccessToken = () => {
   const { getAccessTokenSilently, isAuthenticated } = useAuth0();
+
   const [accessToken, setAccessToken] = useState('');
 
   useEffect(() => {

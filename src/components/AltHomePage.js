@@ -6,8 +6,8 @@ import './AltHomePage.css';
 
 const AltHomePage = () => {
   const { user } = useAuth0(); // Destructure user from useAuth0 hook
-  const [isLoading, setIsLoading] = useState(false);
-  const { getIdTokenClaims,logout } = useAuth0();
+  const [setIsLoading] = useState(false);
+  const {logout } = useAuth0();
   const navigate = useNavigate();
   const { fetchQuestions } = useQuestions();
 

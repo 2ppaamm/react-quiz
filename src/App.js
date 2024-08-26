@@ -11,10 +11,11 @@ import QuestionsDisplay from './components/QuestionsDisplay';
 import MastercodeEnrollment from './components/MastercodeEnrollment';
 import PurchaseEnrollment from './components/PurchaseEnrollment';
 import ResultsPage from './components/ResultsPage';
-import { QuestionsProvider } from './components/QuestionsContext';
-import { fetchUserInfo } from './components/fetchUserInfo';
 import ErrorPage from './components/ErrorPage';
+import useAccessToken from './components/useAccessToken';  // Make sure this path is correct
+import { QuestionsProvider } from './components/QuestionsContext';
 import { useQuestions } from './components/QuestionsContext';
+
 import useAccessToken from './components/useAccessToken.js';
 function Root()
 {
@@ -51,28 +52,26 @@ function Root()
 
   return (
     <div className={`App ${isAuthenticated ? 'authenticated' : ''}`}>
-    {!isLoading && isAuthenticated ? (
-      <Routes>
-        <Route path="/" element={isRegistered ? <HomePage userInfo={userInfo} /> : <AltHomePage />} />
-        <Route path="/mastercode-enrollment" element={<MastercodeEnrollment />} />
-        <Route path="/purchase-enrollment" element={<PurchaseEnrollment />} />
-        <Route path="/menu" element={<MenuPage />} />
-        <Route path="/error" element={<ErrorPage />} />
-        <Route path="/subject-select" element={<SubjectSelection />} />
-        <Route path="/questions-display" element={<QuestionsDisplay />} /> 
-        <Route path="/results" element={<ResultsPage />} />
-      </Routes>
-    ) : (
-      <p>Loading or not authenticated...</p>
-    )}
-    <AuthenticationButtons />
-  </div>
-  )
+      {!isLoading && isAuthenticated ? (
+        <Routes>
+          <Route path="/" element={isRegistered ? <HomePage userInfo={userInfo} /> : <AltHomePage />} />
+          <Route path="/mastercode-enrollment" element={<MastercodeEnrollment />} />
+          <Route path="/purchase-enrollment" element={<PurchaseEnrollment />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="/subject-select" element={<SubjectSelection />} />
+          <Route path="/questions-display" element={<QuestionsDisplay />} />
+          <Route path="/results" element={<ResultsPage />} />
+        </Routes>
+      ) : (
+        <p>Loading or not authenticated...</p>
+      )}
+      <AuthenticationButtons />
+    </div>
+  );
 }
 
-
 function App() {
-
   return (
     <QuestionsProvider>
       <Router>

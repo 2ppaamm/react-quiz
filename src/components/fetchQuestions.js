@@ -11,21 +11,20 @@ export const QuestionsProvider = ({ children }) => {
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
-  const { getIdTokenClaims } = useAuth0();
+  const { getAccessTokenSilently } = useAuth0();
 
   const fetchQuestions = async (url, answers) => {
     setLoading(true);
     setError('');
     console.log("Questions---",url)
     try {
-      const idTokenClaims = await getIdTokenClaims();
-      const idToken = idTokenClaims.__raw;
+      const accessToken = await getAccessTokenSilently();
 
       const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${idToken}`,
+          Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify({ answers }),
       });

@@ -9,7 +9,7 @@ const MastercodeEnrollment = () => {
   const [lastName, setLastName] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
   const navigate = useNavigate();
-  const { fetchQuestions, setIsRegistered } = useQuestions(); // Use the useQuestions hook to access fetchQuestions
+  const { fetchQuestions } = useQuestions(); // Use the useQuestions hook to access fetchQuestions
 
   const handleSubmit = async (event) => {
     event.preventDefault();
